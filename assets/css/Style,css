@@ -1,0 +1,25 @@
+body {
+  background-color: #f9f9f9;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1, h4 {
+  color: #333;
+}
+
+table th, table td {
+  vertical-align: middle;
+}
+
+.navbar-brand {
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.btn-sm {
+  min-width: 75px;
+}
+
+main {
+  min-height: 80vh;
+}

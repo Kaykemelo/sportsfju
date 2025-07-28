@@ -1,0 +1,10 @@
+- criar uma classe pra conexao 
+- criar um metodo pra conectar no banco 
+- criar dentro do metodo um bloco try-catch pra tratar um erro na conexão
+- passar os dados do banco dentro do metodo 
+- retornar a conexão do metodo 
+
+-criar uma model pra categorias 
+- criar uma classe pra essa model de categorias 
+- passar a conexão do banco pra essa classe de categorias 
+- criar um metodo pra listar a categoria 
