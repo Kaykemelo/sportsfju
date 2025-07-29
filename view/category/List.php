@@ -1,12 +1,12 @@
 <?php
-  include '../sportsfju/template/Header.php';
+  include '../sportsfju/template/HeaderCategory.php';
   
 ?>
 
     <h1 class="mb-4">Lista de Categorias</h1>
 
     <section id="tecnologia" class="mb-5">
-      <h4>Tecnologia</h4>
+      <h4>Categorias</h4>
       <table class="table table-bordered">
         <thead class="table-secondary">
           <tr>
@@ -25,12 +25,13 @@
                 echo "<td>".$category['id']."</td>";
                 echo "<td>".$category['name']."</td>";
                 echo "<td>".$category['status']."</td>";
+                echo "<td>";
+                echo "<a href='form.html?id=".$category['id']."' class='btn btn-warning btn-sm me-1'>Editar</a>";
+                echo "<a href='delete.html?id=".$category['id']."' class='btn btn-danger btn-sm'>Excluir</a>";
+                echo "</td>";
+                echo "</tr>";
           } ?>
-            <td>
-              <a href="form.html?id=1" class="btn btn-warning btn-sm">Editar</a>
-              <a href="delete.html?id=1" class="btn btn-danger btn-sm">Excluir</a>
-            </td>
-          </tr>
+            
         </tbody>
       </table>
     </section>

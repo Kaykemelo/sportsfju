@@ -15,6 +15,11 @@ class ModelCategory extends Connection{
         return $stmt->fetchall(PDO::FETCH_ASSOC);
     }
 
+    public function InsertCategory($name,$status,$createdat,$updatedat){
+        $query = 'INSERT INTO tb_fju_category (name,status,created_at,updated_at) VALUES ("'.$name.'","'.$status.'","'.$createdat.'","'.$updatedat.'")';
+        $stmt = $this->conn->prepare($query);
+        return $stmt->execute();
+    }
 }
 
 
