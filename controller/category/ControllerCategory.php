@@ -36,6 +36,35 @@ class ControllerCategory{
         }
          include 'view/category/create.php';
     }
+
+   public function Update($id){
+    
+        $oCategory = new ModelCategory();
+
+        if (isset($id)) {
+            $aCategoryId = $oCategory->getById($id);
+            
+        }
+
+        if (isset($_POST['name']) && isset($_POST['status'])) {
+           $name = $_POST['name'];
+           $status = ($_POST['status'] === 'ativo') ? true : false;
+           
+           $now = (new DateTime())->format('Y-m-d H:i:s.v');
+           $updatedat = $now;
+
+           $sucess = $oCategory->UpdateCategory($name,$status,$updatedat,$id);
+
+           if ($sucess) {
+                $msgUpdate = 'Registro Alterado';
+                $aCategoryId = $oCategory->getById($id);
+           } else {
+                $erroUpdate = 'Erro ao Alterar';
+           }
+           
+        }
+        include 'view/category/edit.php';
+   }
 }
 
 

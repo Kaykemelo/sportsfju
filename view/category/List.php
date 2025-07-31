@@ -26,7 +26,7 @@
                 echo "<td>".$category['name']."</td>";
                 echo "<td>".$category['status']."</td>";
                 echo "<td>";
-                echo "<a href='form.html?id=".$category['id']."' class='btn btn-warning btn-sm me-1'>Editar</a>";
+                echo "<a href='http://localhost/sportsfju/?route=categorias-update&id=" .$category['id']. "' class='btn btn-warning btn-sm me-1'>Editar</a>";
                 echo "<a href='delete.html?id=".$category['id']."' class='btn btn-danger btn-sm'>Excluir</a>";
                 echo "</td>";
                 echo "</tr>";

@@ -20,6 +20,22 @@ class ModelCategory extends Connection{
         $stmt = $this->conn->prepare($query);
         return $stmt->execute();
     }
+
+    public function getById($id){
+        $query = 'SELECT * FROM tb_fju_category WHERE id = "'.$id.'" ';
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function UpdateCategory($name,$status,$updatedat,$id){
+        $query = 'UPDATE tb_fju_category SET name="'.$name.'", status="'.$status.'", updated_at="'.$updatedat.'" WHERE id="'.$id.'"  ';
+        $stmt = $this->conn->prepare($query);
+        return $stmt->execute();  
+    }
+
+
+    
 }
 
 
