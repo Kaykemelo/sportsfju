@@ -7,11 +7,11 @@ include '../sportsfju/template/FormHeader.php';
 
     <!-- MENSAGENS -->
     <?php if (isset($msg)) { ?>
-  <p class="h2"><?php echo $msg; ?></p>
+  <p class="h4"><?php echo $msg; ?></p>
     <?php } ?>
 
     <?php if (isset($erro)) { ?>
-  <p class="h2"><?php echo $erro; ?></p>
+  <p class="h4"><?php echo $erro; ?></p>
     <?php } ?>
 
 

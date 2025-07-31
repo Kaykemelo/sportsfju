@@ -7,6 +7,15 @@
 
     <section id="tecnologia" class="mb-5">
       <h4>Categorias</h4>
+
+      
+
+      <!-- Exibe Msg Quando Exclui uma Categoria !--> 
+      <?php if (!empty($_GET['msgDelete'])) { ?>
+        <p class="h4"><?php echo $_GET['msgDelete']?></p> 
+        <?php } ?>
+    
+
       <table class="table table-bordered">
         <thead class="table-secondary">
           <tr>
@@ -26,8 +35,8 @@
                 echo "<td>".$category['name']."</td>";
                 echo "<td>".$category['status']."</td>";
                 echo "<td>";
-                echo "<a href='http://localhost/sportsfju/?route=categorias-update&id=" .$category['id']. "' class='btn btn-warning btn-sm me-1'>Editar</a>";
-                echo "<a href='delete.html?id=".$category['id']."' class='btn btn-danger btn-sm'>Excluir</a>";
+                echo "<a href='?route=categorias-update&id=" .$category['id']. "' class='btn btn-warning btn-sm me-1'>Editar</a>";
+                echo "<a href='?route=categorias-delete&id=".$category['id']."' class='btn btn-danger btn-sm'>Excluir</a>";
                 echo "</td>";
                 echo "</tr>";
           } ?>

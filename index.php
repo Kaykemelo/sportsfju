@@ -31,6 +31,12 @@ switch ($route) {
         }
         break;    
     
+    case 'categorias-delete':
+        require_once 'controller/category/ControllerCategory.php';
+        $controller = new ControllerCategory();
+        $controller->Delete($_GET['id']);  
+        break;
+    
     default:
         echo "Pagina Não Encontrada";
         break;

@@ -34,7 +34,11 @@ class ModelCategory extends Connection{
         return $stmt->execute();  
     }
 
-
+    public function DeleteCategory($id){
+        $query = 'DELETE FROM tb_fju_category WHERE id='.$id;          
+        $stmt = $this->conn->prepare($query);
+        return $stmt->execute();  
+    }
     
 }
 

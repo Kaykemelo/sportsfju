@@ -18,11 +18,11 @@ class ControllerCategory{
         if (isset($_POST['name'])&& isset($_POST['status'])) {
 
             $name = $_POST['name'];
-            $status = ($_POST['status'] === 'ativo') ? true : false;
+            $status = ($_POST['status'] === 'ativo') ? 1 : 0;
             
-            $now = (new DateTime())->format('Y-m-d H:i:s.v');
-            $createdat = $now;
-            $updatedat = $now;
+            $date = (new DateTime())->format('Y-m-d H:i:s.v');
+            $createdat = $date;
+            $updatedat = $date;
 
             $sucess = $oCategory->InsertCategory($name,$status,$createdat,$updatedat);
 
@@ -35,6 +35,7 @@ class ControllerCategory{
             
         }
          include 'view/category/create.php';
+         
     }
 
    public function Update($id){
@@ -48,10 +49,10 @@ class ControllerCategory{
 
         if (isset($_POST['name']) && isset($_POST['status'])) {
            $name = $_POST['name'];
-           $status = ($_POST['status'] === 'ativo') ? true : false;
+           $status = ($_POST['status'] === 'ativo') ? 1 : 0;
            
-           $now = (new DateTime())->format('Y-m-d H:i:s.v');
-           $updatedat = $now;
+           $date = (new DateTime())->format('Y-m-d H:i:s.v');
+           $updatedat = $date;
 
            $sucess = $oCategory->UpdateCategory($name,$status,$updatedat,$id);
 
@@ -65,7 +66,24 @@ class ControllerCategory{
         }
         include 'view/category/edit.php';
    }
-}
+
+    public function Delete($id){
+
+        $oCategory = new ModelCategory();
+                                         
+        try {
+            $sucess = $oCategory->DeleteCategory($id);
+            $msgDelete = 'Categoria Excluida';
+            // retorna para a pagina de listagem atraves do redirect 
+            header("Location: ?route=categorias&msgDelete=".$msgDelete); 
+
+        } catch (Exception $e) {
+            echo 'Erro'. $e->getMessage();
+        }
+   }
+   
+    
+}  
 
 
 
