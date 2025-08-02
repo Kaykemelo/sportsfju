@@ -1,7 +1,7 @@
 <?php
 require 'conexao/Conexao.php';
 
-class ModelCategory extends Connection{
+class CategoryModel extends Connection{
 
     public function __construct()
     {

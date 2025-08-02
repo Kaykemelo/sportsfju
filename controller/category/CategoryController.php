@@ -1,11 +1,11 @@
 <?php
-require 'model/category/ModelCategory.php';
+require 'model/category/CategoryModel.php';
 
-class ControllerCategory{
+class CategoryController{
 
     public function getList(){
 
-        $obj = new ModelCategory();
+        $obj = new CategoryModel();
 
         $aCategory = $obj->getDataCategory();
         include 'view/category/List.php';
@@ -13,7 +13,7 @@ class ControllerCategory{
 
     public function Insert(){
 
-        $oCategory = new ModelCategory();
+        $oCategory = new CategoryModel();
 
         if (isset($_POST['name'])&& isset($_POST['status'])) {
 
@@ -24,15 +24,14 @@ class ControllerCategory{
             $createdat = $date;
             $updatedat = $date;
 
-            $sucess = $oCategory->InsertCategory($name,$status,$createdat,$updatedat);
-
-            if ($sucess) {
-                $msg = 'Cadastro realizado';
-
-            } else{
-                $erro = 'Erro ao Cadastrar';
+            try {
+                 $sucess = $oCategory->InsertCategory($name,$status,$createdat,$updatedat);
+                 $msg = 'Cadastro realizado';
+                 header("Location: ?route=categorias-insert&msg=".$msg);
+                 exit;
+            } catch (Exception $e) {
+                echo "Erro".$e->getMessage();
             }
-            
         }
          include 'view/category/create.php';
          
@@ -40,7 +39,7 @@ class ControllerCategory{
 
    public function Update($id){
     
-        $oCategory = new ModelCategory();
+        $oCategory = new CategoryModel();
 
         if (isset($id)) {
             $aCategoryId = $oCategory->getById($id);
@@ -54,22 +53,23 @@ class ControllerCategory{
            $date = (new DateTime())->format('Y-m-d H:i:s.v');
            $updatedat = $date;
 
-           $sucess = $oCategory->UpdateCategory($name,$status,$updatedat,$id);
+            try {
+                 $sucess = $oCategory->UpdateCategory($name,$status,$updatedat,$id);
+                 $msgUpdate = 'Registro Alterado';
+                 $aCategoryId = $oCategory->getById($id);
+                 header("Location: ?route=categorias-update&id=".$id."&msgUpdate=".$msgUpdate); 
+                 exit;
 
-           if ($sucess) {
-                $msgUpdate = 'Registro Alterado';
-                $aCategoryId = $oCategory->getById($id);
-           } else {
-                $erroUpdate = 'Erro ao Alterar';
-           }
-           
-        }
-        include 'view/category/edit.php';
+            } catch (Exception $e) {
+                echo "Erro". $e->getMessage();
+            }
+        }        
+         include 'view/category/edit.php';
    }
 
     public function Delete($id){
 
-        $oCategory = new ModelCategory();
+        $oCategory = new CategoryModel();
                                          
         try {
             $sucess = $oCategory->DeleteCategory($id);

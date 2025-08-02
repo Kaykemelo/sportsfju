@@ -6,13 +6,11 @@ include '../sportsfju/template/FormHeader.php';
 <h2 class="mb-4">Alteração de Categorias</h2>
 
     <!-- MENSAGENS -->
-    <?php if (isset($msgUpdate)) { ?>
-  <p class="h4"><?php echo $msgUpdate; ?></p>
+    <?php if (!empty($_GET['msgUpdate'])) { ?>
+  <p class="h4"><?php echo $_GET['msgUpdate']; ?></p>
     <?php } ?>
 
-    <?php if (isset($erroUpdate)) { ?>
-  <p class="h4"><?php echo $erroUpdate; ?></p>
-    <?php } ?>
+
 
 
     <!-- FORMULÁRIO -->

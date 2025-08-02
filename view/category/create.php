@@ -6,13 +6,11 @@ include '../sportsfju/template/FormHeader.php';
     <h2 class="mb-4">Cadastro de Categorias</h2>
 
     <!-- MENSAGENS -->
-    <?php if (isset($msg)) { ?>
-  <p class="h4"><?php echo $msg; ?></p>
+    <?php if (!empty($_GET['msg'])) { ?>
+  <p class="h4"><?php echo $_GET['msg']; ?></p>
     <?php } ?>
 
-    <?php if (isset($erro)) { ?>
-  <p class="h4"><?php echo $erro; ?></p>
-    <?php } ?>
+  
 
 
     <!-- FORMULÁRIO -->

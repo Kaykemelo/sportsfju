@@ -12,28 +12,28 @@ switch ($route) {
         break;
 
     case 'categorias':
-        require_once 'controller/category/ControllerCategory.php';
-        $controller = new ControllerCategory();
+        require_once 'controller/category/CategoryController.php';
+        $controller = new CategoryController();
         $controller->getList();
         break;
 
     case 'categorias-insert':
-        require_once 'controller/category/ControllerCategory.php';
-        $controller = new ControllerCategory();
+        require_once 'controller/category/CategoryController.php';
+        $controller = new CategoryController();
         $controller->Insert();
         break;   
 
     case 'categorias-update':
-        require_once 'controller/category/ControllerCategory.php';
-        $controller = new ControllerCategory();
+        require_once 'controller/category/CategoryController.php';
+        $controller = new CategoryController();
         if (isset($_GET['id'])) {
              $controller->update($_GET['id']);
         }
         break;    
     
     case 'categorias-delete':
-        require_once 'controller/category/ControllerCategory.php';
-        $controller = new ControllerCategory();
+        require_once 'controller/category/CategoryController.php';
+        $controller = new CategoryController();
         $controller->Delete($_GET['id']);  
         break;
     
