@@ -37,6 +37,12 @@ switch ($route) {
         $controller->Delete($_GET['id']);  
         break;
     
+    case 'campeonatos':
+        require_once 'controller/championship/ChampionshipController.php';
+        $controller = new ChampionshipController();
+        $controller->List();
+        break;
+            
     default:
         echo "Pagina Não Encontrada";
         break;

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Categorias - FJU</title>
+  <title>Campeonatos - FJU</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="../../assets/" />
 </head>
@@ -25,7 +25,7 @@
         </ul>
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="btn btn-outline-light btn-sm" href="?route=categorias-insert">+ Novo Conteúdo</a>
+            <a class="btn btn-outline-light btn-sm" href="">+ Novo Conteúdo</a>
           </li>
         </ul>
       </div>
