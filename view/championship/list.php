@@ -29,7 +29,7 @@ include '../sportsfju/template/HeaderChampionship.php';
                 echo "<td>".$championship['name']."</td>";
                 echo "<td>".$championship['status']."</td>";
                 echo "<td>";
-                echo "<a href='" .$championship['id']. "' class='btn btn-warning btn-sm me-1'>Editar</a>";
+                echo "<a href='?route=campeonatos-update&id=" .$championship['id']. "' class='btn btn-warning btn-sm me-1'>Editar</a>";
                 echo "<a href='".$championship['id']."' class='btn btn-danger btn-sm'>Excluir</a>";
                 echo "</td>";
                 echo "</tr>";

@@ -48,6 +48,14 @@ switch ($route) {
         $controller = new ChampionshipController();
         $controller->Insert();
         break;
+
+    case 'campeonatos-update':
+        require_once 'controller/championship/ChampionshipController.php';
+        $controller = new ChampionshipController();
+        if (isset($_GET['id'])) {
+            $controller->Update($_GET['id']); 
+        }
+        break;    
             
     default:
         echo "Pagina Não Encontrada";

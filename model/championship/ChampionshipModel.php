@@ -24,5 +24,21 @@ class ChampionshipModel extends Connection{
         return $stmt->execute();
 
     }
+
+    public function getByID($id){
+        $query = 'SELECT * FROM tb_fju_championship WHERE id="'.$id.'"  ';
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function Update($name,$category,$status,$updatedat,$id){
+        $query = 'UPDATE tb_fju_championship SET name="'.$name.'", category_id="'.$category.'",status="'.$status.'",updated_at="'.$updatedat.'" WHERE id="'.$id.'"';
+        $stmt = $this->conn->prepare($query);
+       
+        return $stmt->execute();
+    }
+
+
 }
 ?>
