@@ -42,6 +42,12 @@ switch ($route) {
         $controller = new ChampionshipController();
         $controller->List();
         break;
+        
+    case 'campeonatos-insert':
+        require_once 'controller/championship/ChampionshipController.php';
+        $controller = new ChampionshipController();
+        $controller->Insert();
+        break;
             
     default:
         echo "Pagina Não Encontrada";

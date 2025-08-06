@@ -1,5 +1,5 @@
 <?php
-require 'conexao/Conexao.php';
+require_once 'conexao/Conexao.php';
 
 class CategoryModel extends Connection{
 

@@ -13,7 +13,6 @@ include '../sportsfju/template/HeaderChampionship.php';
           <tr>
             <th>ID</th>
             <th>ID Campeonato</th>
-            <th>Avatar</th>
             <th>Nome</th>
             <th>Status</th>
             <th>Ações</th>
@@ -27,7 +26,6 @@ include '../sportsfju/template/HeaderChampionship.php';
                 echo "<tr>";
                 echo"<td>".$championship['id']."</td>"; 
                 echo "<td>".$championship['category_id']."</td>";
-                echo "<td>".$championship['avatar']."</td>";
                 echo "<td>".$championship['name']."</td>";
                 echo "<td>".$championship['status']."</td>";
                 echo "<td>";

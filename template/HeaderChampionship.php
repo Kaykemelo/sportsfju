@@ -25,7 +25,7 @@
         </ul>
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="btn btn-outline-light btn-sm" href="">+ Novo Conteúdo</a>
+            <a class="btn btn-outline-light btn-sm" href="?route=campeonatos-insert">+ Novo Conteúdo</a>
           </li>
         </ul>
       </div>
