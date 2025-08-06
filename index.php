@@ -57,6 +57,12 @@ switch ($route) {
         }
         break;    
             
+
+    case 'campeonatos-delete':
+        require_once 'controller/championship/ChampionshipController.php';
+        $controller = new ChampionshipModel();
+        $controller->Delete($_GET['id']);
+        break;    
     default:
         echo "Pagina Não Encontrada";
         break;

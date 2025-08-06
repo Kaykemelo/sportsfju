@@ -1,14 +1,11 @@
-<?php 
-include '../sportsfju/template/FormHeader.php';
-?>
+<?php include '../sportsfju/template/FormHeader.php'; ?>
 
 <h2 class="mb-4">Alteração de Campeonatos</h2>
 
 
+<form method="POST" action="?route=campeonatos-update&id=<?php echo $Championship['id'] ?>">
 
-<form method="POST" action="?route=campeonatos-update&id=<?php echo $aChampionship['id'] ?>">
-
-    <input type="hidden" class="form-control" id="championship" name="championship" value="<?php echo $aChampionship['id']?>">
+    <input type="hidden" class="form-control" id="championship" name="championship" value="<?php echo $Championship['id']?>">
 
     <!--MENSAGENS-->
     <?php if (!empty($_GET['msg'])) { ?>
@@ -20,7 +17,7 @@ include '../sportsfju/template/FormHeader.php';
 
       <div class="mb-3">
         <label for="name" class="form-label">Nome do Campeonato:</label>
-        <input type="text" class="form-control" id="name" name="name" value="<?php echo $aChampionship['name']?>" required>
+        <input type="text" class="form-control" id="name" name="name" value="<?php echo $Championship['name']?>" required>
       </div>
 
      <div class="mb-3">
@@ -36,8 +33,8 @@ include '../sportsfju/template/FormHeader.php';
      <div class="mb-3">
         <label for="status" class="form-label">Status</label>
         <select class="form-select" id="status" name="status" required>
-          <option value="ativo" <?php echo ($aChampionship['status'] == 1) ? 'selected':''?>>Ativo</option>
-          <option value="inativo"<?php echo ($aChampionship['status'] == 0)? 'selected':''?>>Inativo</option>
+          <option value="ativo" <?php echo ($Championship['status'] == 1) ? 'selected':''?>>Ativo</option>
+          <option value="inativo"<?php echo ($Championship['status'] == 0)? 'selected':''?>>Inativo</option>
         </select>
       </div>
 

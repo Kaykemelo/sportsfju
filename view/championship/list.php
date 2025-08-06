@@ -8,6 +8,9 @@ include '../sportsfju/template/HeaderChampionship.php';
     <section id="tecnologia" class="mb-5">
       <h4>Campeonatos</h4>
 
+    <?php  if (!empty($_GET['msg'])) { ?>
+      <h4><?php echo $_GET['msg'];?></h4>
+   <?php } ?>  
      <table class="table table-bordered">
         <thead class="table-secondary">
           <tr>
@@ -30,7 +33,7 @@ include '../sportsfju/template/HeaderChampionship.php';
                 echo "<td>".$championship['status']."</td>";
                 echo "<td>";
                 echo "<a href='?route=campeonatos-update&id=" .$championship['id']. "' class='btn btn-warning btn-sm me-1'>Editar</a>";
-                echo "<a href='".$championship['id']."' class='btn btn-danger btn-sm'>Excluir</a>";
+                echo "<a href='?route=campeonatos-delete&id=".$championship['id']."' class='btn btn-danger btn-sm'>Excluir</a>";
                 echo "</td>";
                 echo "</tr>";
             

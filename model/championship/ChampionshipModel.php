@@ -32,13 +32,18 @@ class ChampionshipModel extends Connection{
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function Update($name,$category,$status,$updatedat,$id){
-        $query = 'UPDATE tb_fju_championship SET name="'.$name.'", category_id="'.$category.'",status="'.$status.'",updated_at="'.$updatedat.'" WHERE id="'.$id.'"';
+    public function Update($aPayload,$categoryId){
+        $query = 'UPDATE tb_fju_championship SET name="'.$aPayload['name'].'", category_id="'.$aPayload['category'].'",status="'.$aPayload['status'].'",updated_at="'.$aPayload['updatedat'].'" WHERE id="'.$categoryId.'"';
         $stmt = $this->conn->prepare($query);
        
         return $stmt->execute();
     }
 
+    public function Delete($id){
+        $query = 'DELETE FROM tb_fju_championship WHERE id="'.$id.'" ';
+        $stmt = $this->conn->prepare($query);
+        return $stmt->execute();
+    }
 
 }
 ?>
