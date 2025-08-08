@@ -17,16 +17,16 @@ class ChampionshipModel extends Connection{
        
     }
     
-    public function Insert($categoryId,$name,$status,$createdat){
-        $query = 'INSERT INTO tb_fju_championship (category_id,name,status,created_at) VALUES ("'.$categoryId.'","'.$name.'","'.$status.'","'.$createdat.'")';
+    public function Insert($aPayload){
+        $query = 'INSERT INTO tb_fju_championship (category_id,name,status,created_at) VALUES ("'.$aPayload['category'].'","'.$aPayload['name'].'","'.$aPayload['status'].'","'.$aPayload['created_at'].'")';
         $stmt = $this->conn->prepare($query);
       
         return $stmt->execute();
 
     }
 
-    public function getByID($id){
-        $query = 'SELECT * FROM tb_fju_championship WHERE id="'.$id.'"  ';
+    public function getByID($ChampionshipId){
+        $query = 'SELECT * FROM tb_fju_championship WHERE id="'.$ChampionshipId.'"  ';
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
@@ -39,10 +39,11 @@ class ChampionshipModel extends Connection{
         return $stmt->execute();
     }
 
-    public function Delete($id){
-        $query = 'DELETE FROM tb_fju_championship WHERE id="'.$id.'" ';
+    public function Delete($championshipId){
+        $query = 'DELETE FROM tb_fju_championship WHERE id="'.$championshipId.'" ';
         $stmt = $this->conn->prepare($query);
-        return $stmt->execute();
+       
+       return $stmt->execute();
     }
 
 }

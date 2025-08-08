@@ -14,21 +14,21 @@ include '../sportsfju/template/FormHeader.php';
 
 
     <!-- FORMULÁRIO -->
-    <form method="POST" action="?route=categorias-update&id=<?php echo $aCategoryId['id']?>">
+    <form method="POST" action="?route=categorias-update&id=<?php echo $CategoryId['id']?>">
       <div class="mb-3">
 
-         <input type="hidden" class="form-control" id="id" name="id" value="<?php echo $aCategoryId['id'] ?>">
+         <input type="hidden" class="form-control" id="id" name="id" value="<?php echo $CategoryId['id'] ?>">
       
         <label for="name" class="form-label">Nome da Categoria</label>
-        <input type="text" class="form-control" id="name" name="name" value="<?php echo $aCategoryId['name'];?>">
+        <input type="text" class="form-control" id="name" name="name" value="<?php echo $CategoryId['name'];?>">
       </div>
 
       <div class="mb-3">
         <label for="status" class="form-label">Status</label>
         <select class="form-select" id="status" name="status" required>
           <option value="">Selecione</option>
-          <option value="ativo" <?php echo ($aCategoryId['status'] == 1) ? 'selected' : ''?>>Ativo</option>
-          <option value="inativo" <?php echo ($aCategoryId['status'] == 0) ? 'selected' : ''?>>Inativo</option>
+          <option value="ativo" <?php echo ($CategoryId['status'] == 1) ? 'selected' : ''?>>Ativo</option>
+          <option value="inativo" <?php echo ($CategoryId['status'] == 0) ? 'selected' : ''?>>Inativo</option>
         </select>
       </div>
 

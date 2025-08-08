@@ -7,9 +7,9 @@ class ChampionshipController {
     public function List(){
         
         try {
-         $obj = new ChampionshipModel();
+         $championshipModel = new ChampionshipModel();
 
-        $aChampionship = $obj->List();
+        $aChampionship = $championshipModel->List();
         include 'view/championship/list.php';
 
         } catch (Exception $e) {
@@ -20,21 +20,18 @@ class ChampionshipController {
 
     public function Insert(){
 
-        $obj = new CategoryModel();
-        $aCategory = $obj->getDataCategory();
+        $categoryModel = new CategoryModel();
+        $Categorys = $categoryModel->getDataCategory();
 
-        $obj = new ChampionshipModel();
+        $championshipModel = new ChampionshipModel();
 
         if (isset($_POST['name'])&& isset($_POST['category'])&& isset($_POST['status'])) {
-            $name = $_POST['name'];
-            $categoryId = $_POST['category'];
-            $status = ($_POST['status'] == 'ativo') ? 1 : 0;
-
+            $_POST['status'] = ($_POST['status'] == 'ativo') ? 1 : 0;
             $date = (new DateTime())->format('Y-m-d H:i:s.v');
-            $createdat = $date;
+            $_POST['created_at'] = $date;
             
             try {
-            $sucess = $obj->Insert($categoryId,$name,$status,$createdat);
+            $championshipModel->Insert($_POST);
             $msg = 'Campeonato Cadastrado';
             header("Location: ?route=campeonatos-insert&msg=".$msg);
             exit;
@@ -44,52 +41,61 @@ class ChampionshipController {
             }
         }
         include 'view/championship/create.php';
+        return;
     }
 
     public function show($championshipId)
     {
         $obj = new ChampionshipModel();
         $Championship = $obj->getByID($championshipId);
-
+        
+        
 
         include 'view/championship/edit.php';
 
     }
 
     public function Update($championshipId){
+        //pega as categorias que existe e um campeonato especifico
 
-        $obj = new ChampionshipModel(); 
-            
-        if (isset($_POST['name']) && isset($_POST['category']) && isset($_POST['status'])) {
+        $categoryModel = new CategoryModel();
+        $aCategory = $categoryModel->getDataCategory();
+       
+        $championshipModel = new ChampionshipModel(); 
+        $Championship =  $championshipModel->getById($championshipId);
+        
+        if (isset($_POST['name']) && isset($_POST['category']) && isset ($_POST['status'])) {
             $_POST['status'] = ($_POST['status'] == 'ativo') ? 1 : 0;
             $date = (new DateTime())->format('Y-m-d H:i:s.v');
             $_POST['updatedat'] = $date;
 
             try {
-                $obj->Update($_POST,$championshipId);
+                $championshipModel->Update($_POST,$championshipId);
                 $msg = "Campeonato Alterado"; 
-                
-            
+                header("Location: ?route=campeonatos-update&id=".$championshipId."&msg=".$msg);
+                exit;
             } catch (Exception $e) {
                 echo "Erro".$e->getMessage();
             }
         }
 
         include 'view/championship/edit.php';
+        return;
     }
 
-    public function Delete($id){
-        $obj = new ChampionshipModel();
+    public function Delete($championshipId){
+       
+        $championshipModel = new ChampionshipModel();
         
         try {
-            $sucess = $obj->Delete($id);
+            $championshipModel->Delete($championshipId);
             $msg = 'Campeonato Excluido';
             header("Location: ?route=campeonatos&msg=".$msg); 
             exit;
         } catch (Exception $e) {
             echo "Erro".$e->getMessage();
         }
-        include 'view/championship/list.php';
+     
     }
 }   
 ?>

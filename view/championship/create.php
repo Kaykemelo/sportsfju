@@ -22,7 +22,7 @@ include '../sportsfju/template/FormHeader.php';
         <select class="form-select" id="category" name="category" required>
           <option value="">Selecione</option>
            <?php 
-           foreach ($aCategory as $category) {
+           foreach ($Categorys as $category) {
             echo "<option value=".$category['id'].">".$category['name']."</option>";
            } ?> 
         </select>

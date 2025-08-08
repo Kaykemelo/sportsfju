@@ -26,9 +26,7 @@ switch ($route) {
     case 'categorias-update':
         require_once 'controller/category/CategoryController.php';
         $controller = new CategoryController();
-        if (isset($_GET['id'])) {
-             $controller->update($_GET['id']);
-        }
+        $controller->update($_GET['id']);
         break;    
     
     case 'categorias-delete':
@@ -52,17 +50,16 @@ switch ($route) {
     case 'campeonatos-update':
         require_once 'controller/championship/ChampionshipController.php';
         $controller = new ChampionshipController();
-        if (isset($_GET['id'])) {
-            $controller->Update($_GET['id']); 
-        }
+        $controller->Update($_GET['id']); 
+        
         break;    
             
-
     case 'campeonatos-delete':
         require_once 'controller/championship/ChampionshipController.php';
-        $controller = new ChampionshipModel();
+        $controller = new ChampionshipController();
         $controller->Delete($_GET['id']);
-        break;    
+        break;
+
     default:
         echo "Pagina Não Encontrada";
         break;

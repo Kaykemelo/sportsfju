@@ -5,27 +5,25 @@ class CategoryController{
 
     public function getList(){
 
-        $obj = new CategoryModel();
+        $categoryModel = new CategoryModel();
 
-        $aCategory = $obj->getDataCategory();
+        $Categorys = $categoryModel->getDataCategory();
         include 'view/category/List.php';
     }
 
     public function Insert(){
 
-        $oCategory = new CategoryModel();
+        $categoryModel = new CategoryModel();
 
         if (isset($_POST['name'])&& isset($_POST['status'])) {
-
-            $name = $_POST['name'];
-            $status = ($_POST['status'] === 'ativo') ? 1 : 0;
+            $_POST['status'] = ($_POST['status'] === 'ativo') ? 1 : 0;
             
             $date = (new DateTime())->format('Y-m-d H:i:s.v');
-            $createdat = $date;
-            $updatedat = $date;
+            $_POST['created_at'] = $date;
+            $_POST['updated_at'] = $date;
 
             try {
-                 $sucess = $oCategory->InsertCategory($name,$status,$createdat,$updatedat);
+                 $categoryModel->InsertCategory($_POST);
                  $msg = 'Cadastro realizado';
                  header("Location: ?route=categorias-insert&msg=".$msg);
                  exit;
@@ -34,30 +32,30 @@ class CategoryController{
             }
         }
          include 'view/category/create.php';
+         return;
          
     }
 
-   public function Update($id){
+   public function Update($idCategory){
     
-        $oCategory = new CategoryModel();
-
-        if (isset($id)) {
-            $aCategoryId = $oCategory->getById($id);
-            
+        $categoryModel = new CategoryModel();
+          
+        if (isset($idCategory)) {
+            $CategoryId = $categoryModel->getById($idCategory);
+           
         }
 
         if (isset($_POST['name']) && isset($_POST['status'])) {
-           $name = $_POST['name'];
-           $status = ($_POST['status'] === 'ativo') ? 1 : 0;
+           $_POST['status'] = ($_POST['status'] === 'ativo') ? 1 : 0;
            
            $date = (new DateTime())->format('Y-m-d H:i:s.v');
-           $updatedat = $date;
+           $_POST['updated_at'] = $date;
 
             try {
-                 $sucess = $oCategory->UpdateCategory($name,$status,$updatedat,$id);
+                 $categoryModel->UpdateCategory($_POST,$idCategory);
                  $msgUpdate = 'Registro Alterado';
-                 $aCategoryId = $oCategory->getById($id);
-                 header("Location: ?route=categorias-update&id=".$id."&msgUpdate=".$msgUpdate); 
+                 $CategoryId = $categoryModel->getById($idCategory);
+                 header("Location: ?route=categorias-update&id=".$idCategory."&msgUpdate=".$msgUpdate); 
                  exit;
 
             } catch (Exception $e) {
@@ -65,14 +63,15 @@ class CategoryController{
             }
         }        
          include 'view/category/edit.php';
+         return;
    }
 
-    public function Delete($id){
+    public function Delete($idCategory){
 
-        $oCategory = new CategoryModel();
+        $categoryModel = new CategoryModel();
                                          
         try {
-            $sucess = $oCategory->DeleteCategory($id);
+            $categoryModel->DeleteCategory($idCategory);
             $msgDelete = 'Categoria Excluida';
             // retorna para a pagina de listagem atraves do redirect 
             header("Location: ?route=categorias&msgDelete=".$msgDelete); 

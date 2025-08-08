@@ -29,7 +29,7 @@
         <tbody>
           <?php 
           
-          foreach ($aCategory as $category) {
+          foreach ($Categorys as $category) {
                 echo "<tr>";
                 echo "<td>".$category['id']."</td>";
                 echo "<td>".$category['name']."</td>";

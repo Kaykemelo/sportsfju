@@ -25,6 +25,7 @@
         <select class="form-select" id="category" name="category" required>
            <?php 
            foreach ($aCategory as $category) {
+        
             echo "<option value=".$category['id'].">".$category['name']."</option>";
            } ?> 
         </select>
