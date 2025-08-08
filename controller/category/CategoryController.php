@@ -75,7 +75,7 @@ class CategoryController{
             $msgDelete = 'Categoria Excluida';
             // retorna para a pagina de listagem atraves do redirect 
             header("Location: ?route=categorias&msgDelete=".$msgDelete); 
-
+            exit;
         } catch (Exception $e) {
             echo 'Erro'. $e->getMessage();
         }

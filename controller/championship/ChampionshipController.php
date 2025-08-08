@@ -44,25 +44,17 @@ class ChampionshipController {
         return;
     }
 
-    public function show($championshipId)
-    {
-        $obj = new ChampionshipModel();
-        $Championship = $obj->getByID($championshipId);
-        
-        
-
-        include 'view/championship/edit.php';
-
-    }
-
     public function Update($championshipId){
         //pega as categorias que existe e um campeonato especifico
 
-        $categoryModel = new CategoryModel();
-        $aCategory = $categoryModel->getDataCategory();
-       
-        $championshipModel = new ChampionshipModel(); 
-        $Championship =  $championshipModel->getById($championshipId);
+        if (isset($championshipId)) {
+            $categoryModel = new CategoryModel();
+            $aCategory = $categoryModel->getDataCategory();
+           
+            $championshipModel = new ChampionshipModel(); 
+            $championship =  $championshipModel->getById($championshipId);
+        }
+        
         
         if (isset($_POST['name']) && isset($_POST['category']) && isset ($_POST['status'])) {
             $_POST['status'] = ($_POST['status'] == 'ativo') ? 1 : 0;
@@ -95,7 +87,8 @@ class ChampionshipController {
         } catch (Exception $e) {
             echo "Erro".$e->getMessage();
         }
-     
+
+        return;
     }
 }   
 ?>

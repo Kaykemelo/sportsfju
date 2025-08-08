@@ -26,7 +26,9 @@ switch ($route) {
     case 'categorias-update':
         require_once 'controller/category/CategoryController.php';
         $controller = new CategoryController();
-        $controller->update($_GET['id']);
+        
+             $controller->update($_GET['id']);
+        
         break;    
     
     case 'categorias-delete':
@@ -50,7 +52,9 @@ switch ($route) {
     case 'campeonatos-update':
         require_once 'controller/championship/ChampionshipController.php';
         $controller = new ChampionshipController();
-        $controller->Update($_GET['id']); 
+        
+       
+            $controller->Update($_GET['id']); 
         
         break;    
             
@@ -58,6 +62,18 @@ switch ($route) {
         require_once 'controller/championship/ChampionshipController.php';
         $controller = new ChampionshipController();
         $controller->Delete($_GET['id']);
+        break;   
+
+    case 'times':
+        require_once 'controller/team/TeamController.php';
+        $controller = new TeamController();
+        $controller->List();
+        break;
+
+    case 'times-insert':
+        require_once 'controller/team/TeamController.php';
+        $controller = new TeamController();
+        $controller->Insert();
         break;
 
     default:
