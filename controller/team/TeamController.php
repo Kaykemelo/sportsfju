@@ -40,7 +40,33 @@ class TeamController {
         return;
     }
 
+    public function Update($teamId){
 
+        if (isset($teamId)) {
+
+            $teamModel = new TeamModel();
+            $team = $teamModel->getTeamId($teamId);
+           
+        }
+
+        if (isset($_POST['name']) && isset($_POST['status'])) {
+            $_POST['status'] = ($_POST['status'] == 'ativo') ? 1 : 0;
+            $date = (new DateTime())->format('Y-m-d H:i:s.v');
+            $_POST['updated_at'] = $date;
+           
+            try {
+                $teamModel->Update($_POST,$teamId);
+                $msg = 'Time Alterado';
+                header("Location: ?route=times-update&id=".$teamId."&msg=".$msg); 
+                exit;
+            } catch (Exception $e) {
+                echo "Erro".$e->getMessage();
+            }
+        }
+        include 'view/team/edit.php';
+        return;  
+
+    }
 }
 
 

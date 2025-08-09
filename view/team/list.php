@@ -24,7 +24,7 @@ include '../sportsfju/template/HeaderTeam.php';
                     echo "<td>".$team['name']."</td>";
                     echo "<td>".$team['status']."</td>";
                     echo "<td>";
-                    echo "<a href='#&id=" .$team['id']. "' class='btn btn-warning btn-sm me-1'>Editar</a>";
+                    echo "<a href='?route=times-update&id=" .$team['id']. "' class='btn btn-warning btn-sm me-1'>Editar</a>";
                     echo "<a href='#&id=" .$team['id']. "' class='btn btn-danger btn-sm'>Excluir</a>";
                     echo "</td>";
                     echo "</tr>";

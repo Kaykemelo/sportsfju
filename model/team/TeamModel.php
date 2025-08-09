@@ -22,7 +22,20 @@ class TeamModel extends Connection {
         return $stmt->execute();
     }
 
+    public function getTeamId($teamId){
+        $query = 'SELECT * FROM tb_fju_team WHERE id="'.$teamId.'" ';
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC); 
+       
 
+    }
+
+    public function Update($aPayload,$teamId){
+        $query = 'UPDATE tb_fju_team SET name="'.$aPayload['name'].'", status="'.$aPayload['status'].'", updated_at="'.$aPayload['updated_at'].'" WHERE id="'.$teamId.'" ';
+        $stmt = $this->conn->prepare($query);
+        return $stmt->execute(); 
+    }
 
 
 

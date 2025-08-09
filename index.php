@@ -76,6 +76,12 @@ switch ($route) {
         $controller->Insert();
         break;
 
+    case 'times-update':
+        require_once 'controller/team/TeamController.php';
+        $controller = new TeamController();
+        $controller->Update($_GET['id']); 
+        break;     
+
     default:
         echo "Pagina Não Encontrada";
         break;
