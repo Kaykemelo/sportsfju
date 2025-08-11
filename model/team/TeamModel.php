@@ -31,13 +31,18 @@ class TeamModel extends Connection {
 
     }
 
+
     public function Update($aPayload,$teamId){
         $query = 'UPDATE tb_fju_team SET name="'.$aPayload['name'].'", status="'.$aPayload['status'].'", updated_at="'.$aPayload['updated_at'].'" WHERE id="'.$teamId.'" ';
         $stmt = $this->conn->prepare($query);
         return $stmt->execute(); 
     }
 
-
+    public function Delete($teamId){
+        $query = ' DELETE FROM tb_fju_team WHERE id="'.$teamId.'"';
+        $stmt = $this->conn->prepare($query);
+        return $stmt->execute();
+    }
 
 
 }

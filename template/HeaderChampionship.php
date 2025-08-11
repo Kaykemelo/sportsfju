@@ -20,7 +20,7 @@
           <li class="nav-item"><a class="nav-link" href="?route=categorias">Categorias</a></li>
           <li class="nav-item"><a class="nav-link" href="?route=campeonatos">Campeonatos</a></li>
           <li class="nav-item"><a class="nav-link" href="?route=times">Times</a></li>
-          <li class="nav-item"><a class="nav-link" href="#marketing">Marketing</a></li>
+          <li class="nav-item"><a class="nav-link" href="?route=jogadores">Jogadores</a></li>
           <li class="nav-item"><a class="nav-link" href="#outros">Outros Conteúdos</a></li>
         </ul>
         <ul class="navbar-nav ms-auto">

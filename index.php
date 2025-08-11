@@ -52,9 +52,7 @@ switch ($route) {
     case 'campeonatos-update':
         require_once 'controller/championship/ChampionshipController.php';
         $controller = new ChampionshipController();
-        
-       
-            $controller->Update($_GET['id']); 
+        $controller->Update($_GET['id']); 
         
         break;    
             
@@ -80,7 +78,27 @@ switch ($route) {
         require_once 'controller/team/TeamController.php';
         $controller = new TeamController();
         $controller->Update($_GET['id']); 
-        break;     
+
+        break;
+        
+    case 'times-delete':
+        require_once 'controller/team/TeamController.php';
+        $controller = new TeamController();
+        $controller->Delete($_GET['id']);
+        break;
+    
+    case 'jogadores':
+        require_once 'controller/player/PlayerController.php';
+        $controller = new PlayerController();
+        $controller->List();
+        break;
+
+    case 'jogadores-insert':
+        require_once 'controller/player/PlayerController.php';
+        $controller = new PlayerController();
+        $controller->Insert();
+        break;
+            
 
     default:
         echo "Pagina Não Encontrada";

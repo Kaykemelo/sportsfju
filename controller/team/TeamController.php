@@ -67,6 +67,24 @@ class TeamController {
         return;  
 
     }
+
+
+    public function Delete($teamId){
+        $TeamModel = new TeamModel();
+
+        try {
+        
+            $TeamModel->Delete($teamId);
+            $msg = 'Time Excluido';
+            header("Location: ?route=times&msg=".$msg);
+            exit;
+        } catch (Exception $e) {
+            echo "Erro".$e->getMessage();
+        }
+
+        include 'view/team/list.php';
+    }
+
 }
 
 
