@@ -26,7 +26,7 @@ include '../sportsfju/template/HeaderTeam.php';
                     echo "<tr>";
                     echo "<td>".$team['id']."</td>";
                     echo "<td>".$team['name']."</td>";
-                    echo "<td>".$team['status']."</td>";
+                    echo "<td>".(($team['status'] == 'ativo')? 'Ativo' : 'Inativo')."</td>";
                     echo "<td>";
                     echo "<a href='?route=times-update&id=" .$team['id']. "' class='btn btn-warning btn-sm me-1'>Editar</a>";
                     echo "<a href='?route=times-delete&id=" .$team['id']. "' class='btn btn-danger btn-sm'>Excluir</a>";
