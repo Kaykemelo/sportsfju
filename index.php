@@ -110,7 +110,12 @@ switch ($route) {
         $controller = new PlayerController();
         $controller->Delete($_GET['id']);
         break;
-            
+        
+    case 'rodadas':
+        require_once 'controller/round/RoundController.php';
+        $controller = new RoundController();
+        $controller->List();
+        break;    
 
     default:
         echo "Pagina Não Encontrada";
