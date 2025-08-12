@@ -37,6 +37,12 @@ class PlayerModel extends Connection{
       
         return $stmt->execute();
     }
+
+    public function Delete($playerId){
+        $query = 'DELETE FROM tb_fju_player WHERE id="'.$playerId.'"';
+        $stmt = $this->conn->prepare($query);
+        return $stmt->execute(); 
+    }
 }
 
 

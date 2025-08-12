@@ -68,7 +68,21 @@ class PlayerController {
         return;
     }
 
+    public function Delete($playerId){
+        $playerModel = new PlayerModel();
 
+        try {
+           
+            $playerModel->Delete($playerId);
+            $msg = 'Jogador Excluido';
+            header("Location: ?route=jogadores&msg=".$msg);
+            exit;
+               
+        } catch (Exception $e) {
+            echo "Erro".$e->getMessage();
+        }
+        include 'view/player/list.php';
+    }
 
 
 }

@@ -104,6 +104,12 @@ switch ($route) {
         $controller = new PlayerController();
         $controller->Update($_GET['id']);
         break;
+        
+    case 'jogadores-delete':
+        require_once 'controller/player/PlayerController.php';
+        $controller = new PlayerController();
+        $controller->Delete($_GET['id']);
+        break;
             
 
     default:
