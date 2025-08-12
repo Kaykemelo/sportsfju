@@ -21,6 +21,22 @@ class PlayerModel extends Connection{
         $stmt = $this->conn->prepare($query);
         return $stmt->execute();
     }
+
+    public function GetById($playerId){
+        $query = 'SELECT * FROM tb_fju_player WHERE id="'.$playerId.'"';
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function Update($aPayLoad,$playerId){
+        $query = 'UPDATE tb_fju_player SET name="'.$aPayLoad['name'].'",phone="'.$aPayLoad['phone'].'",email="'.$aPayLoad['email'].'",
+        status="'.$aPayLoad['status'].'", updated_at="'.$aPayLoad['updated_at'].'" WHERE id="'.$playerId.'"';
+        $stmt = $this->conn->prepare($query);
+      
+        return $stmt->execute();
+    }
 }
 
 

@@ -98,6 +98,12 @@ switch ($route) {
         $controller = new PlayerController();
         $controller->Insert();
         break;
+        
+    case 'jogadores-update':
+        require_once 'controller/player/PlayerController.php';
+        $controller = new PlayerController();
+        $controller->Update($_GET['id']);
+        break;
             
 
     default:

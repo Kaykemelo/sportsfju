@@ -27,7 +27,7 @@ include '../sportsfju/template/HeaderPlayer.php';
                     echo "<td>".$player['email']."</td>";
                     echo "<td>".$player['status']."</td>";
                     echo "<td>";
-                    echo "<a href='#&id=" .$player['id']. "' class='btn btn-warning btn-sm me-1'>Editar</a>";
+                    echo "<a href='?route=jogadores-update&id=" .$player['id']. "' class='btn btn-warning btn-sm me-1'>Editar</a>";
                     echo "<a href='#&id=" .$player['id']. "' class='btn btn-danger btn-sm'>Excluir</a>";
                     echo "</td>";
                     echo "</tr>";
