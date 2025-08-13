@@ -117,6 +117,13 @@ switch ($route) {
         $controller->List();
         break;    
 
+    case 'rodadas-insert':
+        require_once 'controller/round/RoundController.php';
+        $controller = new RoundController();
+        $controller->Insert();
+        break;
+        
+        
     default:
         echo "Pagina Não Encontrada";
         break;

@@ -26,7 +26,7 @@
         </ul>
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="btn btn-outline-light btn-sm" href="?route=jogadores-insert">+ Novo Conteúdo</a>
+            <a class="btn btn-outline-light btn-sm" href="?route=rodadas-insert">+ Novo Conteúdo</a>
           </li>
         </ul>
       </div>
