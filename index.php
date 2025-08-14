@@ -135,6 +135,12 @@ switch ($route) {
         $controller->Delete($_GET['id']);
         break;
             
+    case 'partidas':
+        require_once 'controller/match/MatchController.php';
+        $controller = new MatchController();
+        $controller->List();
+        break;
+
     default:
         echo "Pagina Não Encontrada";
         break;
