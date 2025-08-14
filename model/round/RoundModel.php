@@ -34,6 +34,12 @@ class RoundModel extends Connection{
         $stmt = $this->conn->prepare($query);
         return $stmt->execute();
     }
+
+    public function Delete($roundId){
+        $query = 'DELETE FROM tb_fju_round WHERE id="'.$roundId.'" ';
+        $stmt = $this->conn->prepare($query);
+        return $stmt->execute();
+    }
 }
 
 

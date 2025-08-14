@@ -65,6 +65,21 @@ class RoundController {
         include 'view/round/edit.php';
         return;
     }
+
+    public function Delete($roundId){
+        $roundModel = new RoundModel();
+
+        try {
+            $roundModel->Delete($roundId);
+            $msg = 'Rodada Excluida';
+            header("Location: ?route=rodadas&msg=".$msg);
+            exit;
+        } catch (Exception $e) {
+            echo "Erro".$e->getMessage();
+        }
+        
+        include 'view/round/list.php';
+    }
 }
 
 

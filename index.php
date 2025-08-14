@@ -129,6 +129,12 @@ switch ($route) {
         $controller->Update($_GET['id']);
         break;    
         
+    case 'rodadas-delete':
+        require_once 'controller/round/RoundController.php';
+        $controller = new RoundController();
+        $controller->Delete($_GET['id']);
+        break;
+            
     default:
         echo "Pagina Não Encontrada";
         break;
