@@ -141,6 +141,12 @@ switch ($route) {
         $controller->List();
         break;
 
+    case 'partidas-insert':
+        require_once 'controller/match/MatchController.php';
+        $controller = new MatchController();
+        $controller->Insert();
+        break;
+
     default:
         echo "Pagina Não Encontrada";
         break;
