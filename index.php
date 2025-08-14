@@ -123,6 +123,11 @@ switch ($route) {
         $controller->Insert();
         break;
         
+    case 'rodadas-update':
+        require_once 'controller/round/RoundController.php';
+        $controller = new RoundController();
+        $controller->Update($_GET['id']);
+        break;    
         
     default:
         echo "Pagina Não Encontrada";

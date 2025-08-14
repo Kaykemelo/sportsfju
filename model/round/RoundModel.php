@@ -21,6 +21,19 @@ class RoundModel extends Connection{
         $stmt = $this->conn->prepare($query);
         return $stmt->execute();
     }
+
+    public function getById($roundId){
+        $query = 'SELECT * FROM tb_fju_round WHERE id="'.$roundId.'" ';
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function Update($aPayLoad,$roundId){
+        $query = 'UPDATE tb_fju_round SET round_number="'.$aPayLoad['round_number'].'", date_round="'.$aPayLoad['date_round'].'",status_id="'.$aPayLoad['status'].'",updated_at="'.$aPayLoad['updated_at'].'" WHERE id="'.$roundId.'" ';
+        $stmt = $this->conn->prepare($query);
+        return $stmt->execute();
+    }
 }
 
 
