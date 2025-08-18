@@ -147,6 +147,12 @@ switch ($route) {
         $controller->Insert();
         break;
 
+    case 'partidas-update':
+        require_once 'controller/match/MatchController.php';
+        $controller = new MatchController();
+        $controller->Update($_GET['id']);
+        break;
+
     default:
         echo "Pagina Não Encontrada";
         break;

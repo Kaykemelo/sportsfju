@@ -40,6 +40,33 @@ class MatchController {
         return;
     }
 
+    public function Update($matchId){
+        $matchModel = new MatchModel();
+
+        if (isset($matchId)) {
+            $match = $matchModel->getById($matchId);
+        }
+
+        if (isset($_POST['match']) && isset($_POST['home_team']) && isset($_POST['away_team']) && isset($_POST['home_goals']) && isset($_POST['away_goals']) && isset($_POST['status'])) {
+            $_POST['status'] = ($_POST['status'] == 'ativo') ? 1 : 0;
+
+            $date = (new DateTime())->format('Y-m-d H:i:s.v');
+            $_POST['updated_at'] = $date;
+
+            try {
+                $matchModel->Update($_POST,$matchId);
+                $msg = 'Partida Alterada';
+                header("Location: ?route=partidas-update&id=".$matchId."&msg=".$msg);
+                exit;
+            } catch (Exception $e) {
+                echo "Erro".$e->getMessage();
+            }
+        }
+
+
+        include 'view/match/edit.php';
+        return;
+    }
 }
 
 

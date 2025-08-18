@@ -23,7 +23,19 @@ class MatchModel extends Connection {
         return $stmt->execute();
     }
 
+    public function getById($matchId){
+        $query = 'SELECT * FROM tb_fju_match WHERE id="'.$matchId.'" ';
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 
+    public function Update($aPayLoad,$matchId){
+        $query = 'UPDATE tb_fju_match SET round_id="'.$aPayLoad['match'].'" ,home_team_id="'.$aPayLoad['home_team'].'", away_team_id="'.$aPayLoad['away_team'].'",
+        home_goals="'.$aPayLoad['home_goals'].'",away_goals="'.$aPayLoad['away_goals'].'", status_id="'.$aPayLoad['status'].'" WHERE id="'.$matchId.'" ';
+        $stmt = $this->conn->prepare($query);
+        return $stmt->execute();
+    }
 }
 
 
