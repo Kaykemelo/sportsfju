@@ -20,8 +20,6 @@ class MatchModel extends Connection {
         $query = 'INSERT INTO tb_fju_match (round_id,home_team_id,away_team_id,home_goals,away_goals,status_id,created_at) 
         VALUES ("'.$aPayload['match'].'","'.$aPayload['home_team'].'","'.$aPayload['away_team'].'","'.$aPayload['home_goals'].'","'.$aPayload['away_goals'].'","'.$aPayload['status'].'","'.$aPayload['created_at'].'")';
         $stmt = $this->conn->prepare($query);
-        var_dump($query);
-        exit;
         return $stmt->execute();
     }
 

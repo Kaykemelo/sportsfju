@@ -13,6 +13,7 @@ class MatchController {
             echo "Erro".$e->getMessage();
         }
         include 'view/match/list.php';
+        return;
 
     }
 
@@ -24,20 +25,19 @@ class MatchController {
             $date = (new DateTime())->format('Y-m-d H:i:s.v');
             $_POST['created_at'] = $date;
 
-            $_POST['status'] = ($_POST['status'] = 'Ativa') ? 1 : 0;
+            $_POST['status'] = ($_POST['status'] == 'ativo') ? 1 : 0;
 
-
-            $matchModel->Insert($_POST);
+            try {
+                $matchModel->Insert($_POST);
+                $msg = 'Partida Criada';
+                header("Location: ?route=partidas-insert&msg=".$msg);
+                exit;
+            } catch (Exception $e) {
+                echo "Erro".$e->getMessage();
+            }
         }
-
-
-
-
-
-
-
-
         include 'view/match/create.php';
+        return;
     }
 
 }
