@@ -81,7 +81,7 @@ class PlayerController {
         } catch (Exception $e) {
             echo "Erro".$e->getMessage();
         }
-        include 'view/player/list.php';
+        return;
     }
 
 

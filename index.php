@@ -153,6 +153,12 @@ switch ($route) {
         $controller->Update($_GET['id']);
         break;
 
+    case 'partidas-delete':
+        require_once 'controller/match/MatchController.php';
+        $controller = new MatchController();
+        $controller->Delete($_GET['id']);
+        break;
+
     default:
         echo "Pagina Não Encontrada";
         break;

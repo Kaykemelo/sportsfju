@@ -82,7 +82,7 @@ class TeamController {
             echo "Erro".$e->getMessage();
         }
 
-        include 'view/team/list.php';
+        return;
     }
 
 }

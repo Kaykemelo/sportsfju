@@ -36,6 +36,12 @@ class MatchModel extends Connection {
         $stmt = $this->conn->prepare($query);
         return $stmt->execute();
     }
+
+    public function Delete($matchId){
+        $query = 'DELETE FROM tb_fju_match WHERE id="'.$matchId.'" ';
+        $stmt = $this->conn->prepare($query);
+        return $stmt->execute();
+    }
 }
 
 

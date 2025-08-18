@@ -67,6 +67,22 @@ class MatchController {
         include 'view/match/edit.php';
         return;
     }
+
+    public function Delete($matchId){
+        $matchModel = new MatchModel();
+
+        try {
+            $matchModel->Delete($matchId);
+            $msg = 'Partida Excluida';
+            header("Location: ?route=partidas&msg=".$msg);
+            exit;
+
+        } catch (Exception $e) {
+            echo "Erro".$e->getMessage();
+        }
+        
+        return;
+    }
 }
 
 

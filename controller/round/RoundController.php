@@ -78,7 +78,7 @@ class RoundController {
             echo "Erro".$e->getMessage();
         }
         
-        include 'view/round/list.php';
+        return;
     }
 }
 
