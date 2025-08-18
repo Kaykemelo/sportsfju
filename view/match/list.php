@@ -10,7 +10,8 @@ include '../sportsfju/template/HeaderMatch.php';
 <?php } ?>
 
 <section id="tecnologia" class="mb-5">
-
+    <h4>Partidas</h4>
+    
 <table class="table table-bordered">
     <thead class="table-secondary">
 
