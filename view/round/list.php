@@ -3,14 +3,13 @@ include '../sportsfju/template/HeaderRound.php';
 ?>
 
 <h1 class="mb-4">Lista de Rodadas</h1>
-<section id="tecnologia" class="mb-5">
 <?php if (isset($_GET['msg'])) { ?>
     <h4><?php echo $_GET['msg'] ?></h4>
 <?php }?>
 
+<section id="tecnologia" class="mb-5">
 
-
-
+    <h4>Rodadas</h4>
 <table class="table table-bordered">
     <thead class="table-secondary">
         <tr>
