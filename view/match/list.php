@@ -34,7 +34,7 @@ include '../sportsfju/template/HeaderMatch.php';
                 echo "<td>".$match['round_id']."</td>";
                 echo "<td>".$match['home_goals']."</td>";
                 echo "<td>".$match['away_goals']."</td>";
-                echo "<td>".(($match['status_id'] == 1) ? 'Ativa' : 'Inativa')."</td>";
+                echo "<td>".$match['status_id']."</td>";
                 echo "<td>";
                 echo "<a href='?route=partidas-update&id=".$match['id']."' class='btn btn-warning btn-sm me-1'>Editar</a>";
                 echo "<a href='?route=partidas-delete&id=".$match['id']."' class='btn btn-danger btn-sm '>Excluir</a>";

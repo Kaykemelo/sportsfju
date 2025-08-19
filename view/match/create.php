@@ -19,13 +19,27 @@ include '../sportsfju/template/FormHeader.php';
 
         <div class="mb-3">
             <label for="home_team" class="form-label">Time Casa:</label>
-            <input type="number" class="form-control"  id="home_team" name="home_team"  min="1" required>
-
+            <select class="form-select" id="team" name="home_team" required>
+                <option value="">Selecione</option>
+                <?php 
+                    foreach ($Teams as $team) {
+                        echo "<option value=".$team['id'].">".$team['name']."</option>";
+                    }
+                
+                ?>
+            </select>
         </div>
 
         <div class="mb-3">
             <label for="away_team" class="form-label">Time Fora:</label>
-            <input type="number" class="form-control"  id="away_team" name="away_team" min="1" required>
+            <select class="form-select" id="team" name="away_team" required>
+                <option value="">Selecione:</option>
+                <?php 
+                    foreach ($Teams as $team) {
+                        echo "<option value=".$team['id'].">".$team['name']."</option>";
+                    }
+                ?>
+            </select>
 
         </div>
 
@@ -45,8 +59,10 @@ include '../sportsfju/template/FormHeader.php';
             <label for="home_goals" class="form-label">Status da Partida:</label>
             <select class="form-select" id="status" name="status" required>
                 <option value="">Selecione</option>
-                <option value="ativo">Ativa</option>
-                <option value="inativo">Inativa</option>
+                <option value="Em Andamento">Em Andamento</option>
+                <option value="Iniciada">Iniciada</option>
+                <option value="Encerrada">Encerrada</option>
+
            </select>
         </div>
             

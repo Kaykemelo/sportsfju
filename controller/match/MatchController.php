@@ -1,6 +1,7 @@
 <?php
 
 require_once 'model/match/MatchModel.php';
+require_once 'model/team/TeamModel.php';
 
 class MatchController {
 
@@ -18,14 +19,16 @@ class MatchController {
     }
 
     public function Insert(){
+
+        $TeamModel = new TeamModel();
+        $Teams = $TeamModel->getDataTeam();
+
         $matchModel = new MatchModel();
 
         if (isset($_POST['match']) && isset($_POST['home_team']) && isset($_POST['away_team']) && isset($_POST['home_goals']) && isset($_POST['away_goals']) && isset($_POST['status']) ) {
 
             $date = (new DateTime())->format('Y-m-d H:i:s.v');
             $_POST['created_at'] = $date;
-
-            $_POST['status'] = ($_POST['status'] == 'ativo') ? 1 : 0;
 
             try {
                 $matchModel->Insert($_POST);
