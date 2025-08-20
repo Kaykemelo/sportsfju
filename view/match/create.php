@@ -12,14 +12,14 @@ include '../sportsfju/template/FormHeader.php';
     <form action="?route=partidas-insert" method="post">
 
         <div class="mb-3">
-            <label for="match" class="form-label">Partida:</label>
-            <input type="number" class="form-control"  id="match" name="match"  min="1"  required>
+            <label for="match" class="form-label">Rodada:</label>
+            <input type="number" class="form-control"  id="round" name="round"  min="1"  required>
 
         </div>
 
         <div class="mb-3">
             <label for="home_team" class="form-label">Time Casa:</label>
-            <select class="form-select" id="team" name="home_team" required>
+            <select class="form-select" id="home_team" name="home_team" required>
                 <option value="">Selecione</option>
                 <?php 
                     foreach ($Teams as $team) {
@@ -32,7 +32,7 @@ include '../sportsfju/template/FormHeader.php';
 
         <div class="mb-3">
             <label for="away_team" class="form-label">Time Fora:</label>
-            <select class="form-select" id="team" name="away_team" required>
+            <select class="form-select" id="away_team" name="away_team" required>
                 <option value="">Selecione:</option>
                 <?php 
                     foreach ($Teams as $team) {

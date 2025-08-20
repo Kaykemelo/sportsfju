@@ -15,21 +15,33 @@ include '../sportsfju/template/FormHeader.php';
         <input type="hidden" name="id" id="id" value="<?php echo $match['id']?>">
 
         <div class="mb-3">
-            <label for="match" class="form-label">Partida:</label>
-            <input type="number" class="form-control"  id="match" name="match"  min="1" value="<?php echo $match['round_id']?>"  required>
+            <label for="match" class="form-label">Rodada:</label>
+            <input type="number" class="form-control"  id="round" name="round"  min="1" value="<?php echo $match['round_id']?>"  required>
 
         </div>
 
         <div class="mb-3">
             <label for="home_team" class="form-label">Time Casa:</label>
-            <input type="number" class="form-control"  id="home_team" name="home_team"  min="1" value="<?php echo $match['home_team_id']?>" required>
-
+            <select class="form-select" id="home_team" name="home_team">
+                <?php 
+                foreach ($Teams as $Team) {
+                    $selected = ($Team['id'] == $match['home_team_id'])? 'selected' : '';
+                    echo '<option value="'.$Team['id'].'" '.$selected.'>'.$Team['name'].'</option>';
+                }
+                ?>
+            </select>
         </div>
 
         <div class="mb-3">
             <label for="away_team" class="form-label">Time Fora:</label>
-            <input type="number" class="form-control"  id="away_team" name="away_team" min="1" value="<?php echo $match['away_team_id'] ?>" required>
-
+            <select class="form-select" id="away_team" name="away_team">
+                <?php 
+                foreach ($Teams as $Team) {
+                    $selected = ($Team['id'] == $match['away_team_id'])? 'selected' : '';
+                     echo '<option value="'.$Team['id'].'" '.$selected.'>'.$Team['name'].'</option>';
+                }
+                ?>
+            </select>
         </div>
 
         <div class="mb-3">
@@ -48,8 +60,9 @@ include '../sportsfju/template/FormHeader.php';
             <label for="home_goals" class="form-label">Status da Partida:</label>
             <select class="form-select" id="status" name="status" required>
                 <option value="">Selecione</option>
-                <option value="ativo" <?php echo ($match['status_id'] == 1) ? 'selected' : '' ?>>Ativa</option>
-                <option value="inativo" <?php echo ($match['status_id'] == 0)? 'selected' : ''?>>Inativa</option>
+                <option value="Em Andamento" <?php echo ($match['status_id'] == 'Em Andamento') ? 'selected' : '' ?>>Em Andamento</option>
+                <option value="Iniciada" <?php echo ($match['status_id'] == 'Iniciada')? 'selected' : ''?>>Iniciada</option>
+                <option value="Encerrada" <?php echo ($match['status_id'] == 'Encerrada')? 'selected' : '' ?>>Encerrada</option>
            </select>
         </div>
             

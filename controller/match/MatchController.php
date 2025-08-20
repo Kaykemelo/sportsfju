@@ -25,7 +25,7 @@ class MatchController {
 
         $matchModel = new MatchModel();
 
-        if (isset($_POST['match']) && isset($_POST['home_team']) && isset($_POST['away_team']) && isset($_POST['home_goals']) && isset($_POST['away_goals']) && isset($_POST['status']) ) {
+        if (isset($_POST['round']) && isset($_POST['home_team']) && isset($_POST['away_team']) && isset($_POST['home_goals']) && isset($_POST['away_goals']) && isset($_POST['status']) ) {
 
             $date = (new DateTime())->format('Y-m-d H:i:s.v');
             $_POST['created_at'] = $date;
@@ -45,13 +45,17 @@ class MatchController {
 
     public function Update($matchId){
         $matchModel = new MatchModel();
+        $TeamModel = new TeamModel();
 
         if (isset($matchId)) {
             $match = $matchModel->getById($matchId);
+            $Teams = $TeamModel->getDataTeam();
+            var_dump($match);
+            exit;
         }
 
-        if (isset($_POST['match']) && isset($_POST['home_team']) && isset($_POST['away_team']) && isset($_POST['home_goals']) && isset($_POST['away_goals']) && isset($_POST['status'])) {
-            $_POST['status'] = ($_POST['status'] == 'ativo') ? 1 : 0;
+        if (isset($_POST['round']) && isset($_POST['home_team']) && isset($_POST['away_team']) && isset($_POST['home_goals']) && isset($_POST['away_goals']) && isset($_POST['status'])) {
+
 
             $date = (new DateTime())->format('Y-m-d H:i:s.v');
             $_POST['updated_at'] = $date;
