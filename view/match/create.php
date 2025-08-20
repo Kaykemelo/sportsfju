@@ -56,12 +56,14 @@ include '../sportsfju/template/FormHeader.php';
         </div>
 
         <div class="mb-3">
-            <label for="home_goals" class="form-label">Status da Partida:</label>
+            <label for="status_match" class="form-label">Status da Partida:</label>
             <select class="form-select" id="status" name="status" required>
                 <option value="">Selecione</option>
-                <option value="Em Andamento">Em Andamento</option>
-                <option value="Iniciada">Iniciada</option>
-                <option value="Encerrada">Encerrada</option>
+                <?php 
+                    foreach ($aMatchStatus as $matchstatus) {
+                        echo "<option value=".$matchstatus['id'].">".$matchstatus['description']."</option>";
+                    }
+                ?>
 
            </select>
         </div>

@@ -2,6 +2,7 @@
 
 require_once 'model/match/MatchModel.php';
 require_once 'model/team/TeamModel.php';
+require_once 'model/matchStatus/MatchStatusModel.php';
 
 class MatchController {
 
@@ -25,12 +26,17 @@ class MatchController {
 
         $matchModel = new MatchModel();
 
+        $oMatchStatus = new MatchStatusModel();
+        $aMatchStatus = $oMatchStatus->GetDataStatus();
+
+
         if (isset($_POST['round']) && isset($_POST['home_team']) && isset($_POST['away_team']) && isset($_POST['home_goals']) && isset($_POST['away_goals']) && isset($_POST['status']) ) {
 
             $date = (new DateTime())->format('Y-m-d H:i:s.v');
             $_POST['created_at'] = $date;
 
             try {
+               
                 $matchModel->Insert($_POST);
                 $msg = 'Partida Criada';
                 header("Location: ?route=partidas-insert&msg=".$msg);

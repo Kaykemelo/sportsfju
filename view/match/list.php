@@ -20,6 +20,9 @@ include '../sportsfju/template/HeaderMatch.php';
             <th>Rodada</th>
             <th>Time Casa</th>
             <th>Time Fora</th>
+            <th>Pontos Time Casa</th>
+            <th>Pontos Time Fora</th>
+            <th>Vencedor</th>
             <th>Status</th>
             <th>Ações</th>
         </tr>
@@ -32,9 +35,12 @@ include '../sportsfju/template/HeaderMatch.php';
                 echo "<tr>";
                 echo "<td>".$match['id']."</td>";
                 echo "<td>".$match['round_id']."</td>";
-                echo "<td>".$match['home_goals']."</td>";
-                echo "<td>".$match['away_goals']."</td>";
-                echo "<td>".$match['status_id']."</td>";
+                echo "<td>".$match['Time_Casa']."</td>";
+                echo "<td>".$match['Time_Visitante']."</td>";
+                echo "<td>".$match['Pontos_Time_Casa']."</td>";
+                echo "<td>".$match['Pontos_Time_Fora']."</td>";
+                echo "<td>".$match['Vencedor']."</td>";
+                echo "<td>".$match['status']."</td>";
                 echo "<td>";
                 echo "<a href='?route=partidas-update&id=".$match['id']."' class='btn btn-warning btn-sm me-1'>Editar</a>";
                 echo "<a href='?route=partidas-delete&id=".$match['id']."' class='btn btn-danger btn-sm '>Excluir</a>";
