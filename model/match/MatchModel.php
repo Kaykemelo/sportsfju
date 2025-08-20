@@ -18,7 +18,7 @@ class MatchModel extends Connection {
 
     public function Insert($aPayload){
         $query = 'INSERT INTO tb_fju_match (round_id,home_team_id,away_team_id,home_goals,away_goals,status_id,created_at) 
-        VALUES ("'.$aPayload['match'].'","'.$aPayload['home_team'].'","'.$aPayload['away_team'].'","'.$aPayload['home_goals'].'","'.$aPayload['away_goals'].'","'.$aPayload['status'].'","'.$aPayload['created_at'].'")';
+        VALUES ("'.$aPayload['round'].'","'.$aPayload['home_team'].'","'.$aPayload['away_team'].'","'.$aPayload['home_goals'].'","'.$aPayload['away_goals'].'","'.$aPayload['status'].'","'.$aPayload['created_at'].'")';
         $stmt = $this->conn->prepare($query);
         return $stmt->execute();
     }
@@ -31,7 +31,7 @@ class MatchModel extends Connection {
     }
 
     public function Update($aPayLoad,$matchId){
-        $query = 'UPDATE tb_fju_match SET round_id="'.$aPayLoad['match'].'" ,home_team_id="'.$aPayLoad['home_team'].'", away_team_id="'.$aPayLoad['away_team'].'",
+        $query = 'UPDATE tb_fju_match SET round_id="'.$aPayLoad['round'].'" ,home_team_id="'.$aPayLoad['home_team'].'", away_team_id="'.$aPayLoad['away_team'].'",
         home_goals="'.$aPayLoad['home_goals'].'",away_goals="'.$aPayLoad['away_goals'].'", status_id="'.$aPayLoad['status'].'" WHERE id="'.$matchId.'" ';
         $stmt = $this->conn->prepare($query);
         return $stmt->execute();

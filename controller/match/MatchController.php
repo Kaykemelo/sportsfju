@@ -50,8 +50,6 @@ class MatchController {
         if (isset($matchId)) {
             $match = $matchModel->getById($matchId);
             $Teams = $TeamModel->getDataTeam();
-            var_dump($match);
-            exit;
         }
 
         if (isset($_POST['round']) && isset($_POST['home_team']) && isset($_POST['away_team']) && isset($_POST['home_goals']) && isset($_POST['away_goals']) && isset($_POST['status'])) {
