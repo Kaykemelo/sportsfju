@@ -59,10 +59,11 @@ include '../sportsfju/template/FormHeader.php';
         <div class="mb-3">
             <label for="home_goals" class="form-label">Status da Partida:</label>
             <select class="form-select" id="status" name="status" required>
-                <option value="">Selecione</option>
-                <option value="Em Andamento" <?php echo ($match['status_id'] == 2) ? 'selected' : '' ?>>Em Andamento</option>
-                <option value="Iniciada" <?php echo ($match['status_id'] == 3)? 'selected' : ''?>>Iniciada</option>
-                <option value="Encerrada" <?php echo ($match['status_id'] == 4)? 'selected' : '' ?>>Encerrada</option>
+                <?php 
+                foreach ($aMatchStatus as $matchStatus) {
+                    echo '<option value="'.$matchStatus['id'].'"'.(($matchStatus['id'] == $match['status_id']) ? 'selected' : '').'>'.$matchStatus['description'].'</option>';
+                }
+                ?>
            </select>
         </div>
             

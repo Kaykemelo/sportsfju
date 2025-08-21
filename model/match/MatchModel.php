@@ -50,8 +50,6 @@ class MatchModel extends Connection {
         $query = 'UPDATE tb_fju_match SET round_id="'.$aPayLoad['round'].'" ,home_team_id="'.$aPayLoad['home_team'].'", away_team_id="'.$aPayLoad['away_team'].'",
         home_goals="'.$aPayLoad['home_goals'].'",away_goals="'.$aPayLoad['away_goals'].'", status_id="'.$aPayLoad['status'].'" WHERE id="'.$matchId.'" ';
         $stmt = $this->conn->prepare($query);
-        var_dump($query);
-        exit;
         return $stmt->execute();
     }
 

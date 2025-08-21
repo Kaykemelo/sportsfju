@@ -9,7 +9,7 @@ class MatchStatusModel extends Connection {
         parent::Connection();
     }
 
-    public function GetDataStatus(){
+    public function getDataStatus(){
         $query = 'SELECT * FROM tb_fju_match_status';
         $stmt = $this->conn->prepare($query);
         $stmt->execute();

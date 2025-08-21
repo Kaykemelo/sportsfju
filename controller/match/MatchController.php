@@ -25,9 +25,8 @@ class MatchController {
         $Teams = $TeamModel->getDataTeam();
 
         $matchModel = new MatchModel();
-
         $oMatchStatus = new MatchStatusModel();
-        $aMatchStatus = $oMatchStatus->GetDataStatus();
+        $aMatchStatus = $oMatchStatus->getDataStatus();
 
 
         if (isset($_POST['round']) && isset($_POST['home_team']) && isset($_POST['away_team']) && isset($_POST['home_goals']) && isset($_POST['away_goals']) && isset($_POST['status']) ) {
@@ -36,7 +35,6 @@ class MatchController {
             $_POST['created_at'] = $date;
 
             try {
-               
                 $matchModel->Insert($_POST);
                 $msg = 'Partida Criada';
                 header("Location: ?route=partidas-insert&msg=".$msg);
@@ -52,14 +50,15 @@ class MatchController {
     public function Update($matchId){
         $matchModel = new MatchModel();
         $TeamModel = new TeamModel();
+        $oMatchStatus = new MatchStatusModel();
 
         if (isset($matchId)) {
             $match = $matchModel->getById($matchId);
             $Teams = $TeamModel->getDataTeam();
+            $aMatchStatus = $oMatchStatus->getDataStatus();
         }
 
         if (isset($_POST['round']) && isset($_POST['home_team']) && isset($_POST['away_team']) && isset($_POST['home_goals']) && isset($_POST['away_goals']) && isset($_POST['status'])) {
-
 
             $date = (new DateTime())->format('Y-m-d H:i:s.v');
             $_POST['updated_at'] = $date;
