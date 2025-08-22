@@ -158,6 +158,12 @@ switch ($route) {
         $controller = new MatchController();
         $controller->Delete($_GET['id']);
         break;
+    
+    case 'usuarios':
+        require_once 'controller/user/UserController.php';
+        $controller = new UserController();
+        $controller->userList();
+        break;
 
     case 'usuario-cadastro':
         require_once 'controller/user/UserController.php';

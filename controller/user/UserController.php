@@ -4,6 +4,18 @@ require 'model/user/UserModel.php';
 
 class UserController {
 
+   public function userList(){
+    $oUserModel = new UserModel();
+
+        try {
+            $users = $oUserModel->getDataUser();
+        } catch (Exception $e) {
+            echo "Erro".$e->getMessage();
+        }
+
+    include 'view/user/list.php';
+   } 
+
     public function registerUser(){
         $oUserModel = new UserModel();
 

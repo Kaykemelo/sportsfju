@@ -21,6 +21,13 @@ class UserModel extends Connection {
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+
+    public function getDataUser(){
+        $query = 'SELECT * FROM tb_fju_user';
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchall(PDO::FETCH_ASSOC);
+    }
 }
 
 
