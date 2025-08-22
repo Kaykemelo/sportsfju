@@ -7,7 +7,7 @@ $route = $_GET['route'] ?? 'home';
 
 switch ($route) {
     case 'home':
-        header("location: ?route=categorias");
+        header("location: ?route=usuario-login");
         exit;
         break;
 
@@ -158,6 +158,18 @@ switch ($route) {
         $controller = new MatchController();
         $controller->Delete($_GET['id']);
         break;
+
+    case 'usuario-cadastro':
+        require_once 'controller/user/UserController.php';
+        $controller = new UserController();
+        $controller->registerUser();
+        break;    
+
+    case 'usuario-login':
+        require_once 'controller/user/UserController.php';
+        $controller = new UserController();
+        $controller->loginUser();
+        break;    
 
     default:
         echo "Pagina Não Encontrada";

@@ -1,5 +1,6 @@
 <?php
 require 'model/category/CategoryModel.php';
+require_once 'controller/verification/Verification.php';
 
 class CategoryController{
 
@@ -8,6 +9,9 @@ class CategoryController{
         $categoryModel = new CategoryModel();
 
         $Categorys = $categoryModel->getDataCategory();
+        
+        $oVerification = new VerificationController();
+        $oVerification->checkSession();
         include 'view/category/List.php';
     }
 

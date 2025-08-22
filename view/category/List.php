@@ -2,6 +2,11 @@
   include '../sportsfju/template/HeaderCategory.php';
   
 ?>
+  <?php if (isset($_SESSION['user_name'])) {  ?>
+      <h2><?php echo 'Olá '.$_SESSION['user_name']; ?></h2>
+  <?php }?>
+
+
 
     <h1 class="mb-4">Lista de Categorias</h1>
 
