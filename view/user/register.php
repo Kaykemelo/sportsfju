@@ -23,7 +23,7 @@ include '../sportsfju/template/FormHeader.php';
     </div>
 
     <div class="d-flex justify-content-between">
-        <a href="?route=usuario-cadastro" class="btn btn-secondary">Voltar</a>
+        <a href="?route=usuario-login" class="btn btn-secondary">Voltar</a>
         <button type="submit" class="btn btn-primary">Enviar</button>
 
     </div>

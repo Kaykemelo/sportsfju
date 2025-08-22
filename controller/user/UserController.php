@@ -7,24 +7,21 @@ class UserController {
     public function registerUser(){
         $oUserModel = new UserModel();
 
-        if($_SERVER['REQUEST_METHOD'] === 'POST'){
-
-        
         if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['password']) ) {
             
             $date = (new DateTime())->format('Y-m-d H:i:s.v');
             $_POST['created_at'] = $date;
-        }
 
-        try {
-            $oUserModel->userRegister($_POST);
-            $msgRegister = 'Cadastro Concluido, Faça seu Login pra continuar';
-            header("Location: ?route=usuario-login&msgRegister=".$msgRegister);
-            exit;
-        } catch (Exception $e) {
-            echo "Erro".$e->getMessage();
+            try {
+                $oUserModel->userRegister($_POST);
+                $msgRegister = 'Cadastro Concluido, Faça seu Login pra continuar';
+                header("Location: ?route=usuario-login&msgRegister=".$msgRegister);
+                exit;
+            } catch (Exception $e) {
+                echo "Erro".$e->getMessage();
+            }
+
         }
-    }
         include 'view/user/register.php';
     }
 
