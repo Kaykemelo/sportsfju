@@ -18,12 +18,12 @@ include '../sportsfju/template/FormHeader.php';
 
     <div class="mb-3">
         <label for="email">Email:</label>
-        <input type="text" class="form-control" id="email" name="email" required>
+        <input type="text" class="form-control" id="email" name="email" placeholder="Digite Seu Email"  required>
     </div>
 
     <div class="mb-3">
         <label for="password">Senha:</label>
-        <input type="password" class="form-control" id="password" name="password" required>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Digite Sua Senha"  required>
     </div>
 
     <div class="d-flex justify-content-between">
