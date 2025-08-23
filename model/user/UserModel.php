@@ -34,7 +34,12 @@ class UserModel extends Connection {
         $stmt = $this->conn->prepare($query);
         return $stmt->execute();
     }
-    
+
+    public function userDelete($userId){
+        $query = 'DELETE FROM tb_fju_user WHERE id="'.$userId.'" ';
+        $stmt = $this->conn->prepare($query);
+        return $stmt->execute();
+    }
     public function getDataUser(){
         $query = 'SELECT * FROM tb_fju_user';
         $stmt = $this->conn->prepare($query);

@@ -3,6 +3,14 @@ include '../sportsfju/template/HeaderUser.php';
 ?>
 
 <h1 class="mb-4">Lista de Usuarios</h1>
+<?php if (isset($_GET['msg'])) { ?>
+    <h4><?php echo $_GET['msg']?></h4>
+<?php } ?>
+
+<?php if (isset($_GET['msgRegister'])) { ?>
+    <h4><?php echo $_GET['msgRegister']?></h4>
+<?php } ?>
+
 <h4>Usuarios</h4>
 
 <section class="mb-5">

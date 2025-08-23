@@ -26,8 +26,8 @@ class UserController {
 
             try {
                 $oUserModel->userRegister($_POST);
-                $msgRegister = 'Cadastro Concluido, Faça seu Login pra continuar';
-                header("Location: ?route=usuario-login&msgRegister=".$msgRegister);
+                $msgRegister = 'Cadastro de Usuario Concluido';
+                header("Location: ?route=usuarios&msgRegister=".$msgRegister);
                 exit;
             } catch (Exception $e) {
                 echo "Erro".$e->getMessage();
@@ -35,6 +35,7 @@ class UserController {
 
         }
         include 'view/user/register.php';
+        return;
     }
 
     public function userUpdate($userId){
@@ -59,8 +60,21 @@ class UserController {
             }
         }
         include 'view/user/edit.php';
+        return;
     }
 
+    public function userDelete($userId){
+        $oUserModel= new UserModel();
+            try {
+                $oUserModel->userDelete($userId);
+                $msg = 'Usuario Excluido';
+                header("Location: ?route=usuarios&msg=".$msg);
+                exit;
+            } catch (Exception $e) {
+                echo "Erro".$e->getMessage();
+            }
+            return;
+    }
 
     public function loginUser(){
         $oUserModel = new UserModel();
@@ -85,6 +99,7 @@ class UserController {
 
         }
         include 'view/user/login.php';
+        return;
     }
 
     public function createSession($user){
