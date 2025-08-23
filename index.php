@@ -171,6 +171,12 @@ switch ($route) {
         $controller->registerUser();
         break;    
 
+    case 'usuario-update':
+        require_once 'controller/user/UserController.php';
+        $controller = new UserController();
+        $controller->userUpdate($_GET['id']);
+        break;
+        
     case 'usuario-login':
         require_once 'controller/user/UserController.php';
         $controller = new UserController();

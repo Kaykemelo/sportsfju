@@ -37,6 +37,30 @@ class UserController {
         include 'view/user/register.php';
     }
 
+    public function userUpdate($userId){
+        $oUserModel = new UserModel();
+
+        if (isset($userId)) {
+            $aUser = $oUserModel->getUserId($userId);
+        }
+
+        if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['password'])) {
+            
+            $date = (new DateTime())->format('Y-m-d H:i:s.v');
+            $_POST['updated_at'] = $date;
+
+            try {
+                $oUserModel->userUpdate($userId,$_POST);
+                $msg = 'Usuario Alterado';
+                header("Location: ?route=usuario-update&id=".$userId."&msg=".$msg);
+                exit;
+            } catch (Exception $e) {
+                echo "Erro".$e->getMessage(); 
+            }
+        }
+        include 'view/user/edit.php';
+    }
+
 
     public function loginUser(){
         $oUserModel = new UserModel();

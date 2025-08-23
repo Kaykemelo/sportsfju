@@ -22,6 +22,19 @@ class UserModel extends Connection {
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
+    public function getUserId($userId){
+        $query = 'SELECT * FROM tb_fju_user WHERE id="'.$userId.'" ';
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function userUpdate($userId,$aPayLoad){
+        $query = 'UPDATE tb_fju_user SET name="'.$aPayLoad['name'].'",email="'.$aPayLoad['email'].'",password="'.$aPayLoad['password'].'", updated_at="'.$aPayLoad['updated_at'].'" WHERE id="'.$userId.'"  ';
+        $stmt = $this->conn->prepare($query);
+        return $stmt->execute();
+    }
+    
     public function getDataUser(){
         $query = 'SELECT * FROM tb_fju_user';
         $stmt = $this->conn->prepare($query);
