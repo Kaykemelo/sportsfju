@@ -1,0 +1,170 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #052c53;
+    color: #ffffff;
+    font-family: "Open Sans",sans-serif;
+}
+
+.FJU-Esporte {
+    max-height: 80px;
+}
+
+.Lista-Topicos {
+    padding: 5px;
+}
+
+.Lista-Topicos ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.Lista-Topicos li a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px 15px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.Lista-Topicos li a:hover{
+    text-decoration: none;
+    color: #d40000;
+    padding: 10px 15px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.imagens {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Banner-Esporte {
+    width: 70%;
+    height: 70%;
+
+}
+
+.conteudos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 55px;
+}
+
+.card-conteudo {
+    border-radius: 6px;
+    background-color: #ffffff;
+    box-shadow: 4px 4px 8px  rgba(0, 0, 0, 0.2);
+    width: 200px;
+    height: 150px;
+}
+
+.titulo-card {
+    text-align: center;
+    font-size: 17px;
+    font-family: "Roboto",sans-serif;
+    color: #052c53;
+}
+
+.Imagem-Futebol {
+    max-height: 60px;
+    display: block;
+    margin: 20px auto;
+    
+}
+
+.Imagem-Volei {
+    max-height: 67px;
+    display: block;
+    margin: 20px auto;
+}
+
+.Imagem-Lutas {
+    max-width: 90px;
+    display: block;
+    margin: 35px auto;
+}
+
+.texto-Esportes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Texto-Fju {
+    font-size: 20px;
+    font-family: "Roboto",sans-serif;
+    font-weight: 500;
+    color: #052c53;
+    line-height: 1.5;
+    text-align: center;
+    max-width: 950px;
+    margin-top: 8%;
+
+}
+
+.botao-Cadastro{
+    background-color: #052c53;
+    color: #ffffff;
+    border-radius: 6px;
+    padding: 10px 15px;
+    text-decoration: none;
+
+}
+
+.botao-Cadastro:link{
+    background-color: #052c53;
+    color: #ffffff;
+    border-radius: 6px;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+.botao-Cadastro:visited {
+    background-color: #052c53;
+    color: #ffffff;
+    border-radius: 6px;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+.botao-Cadastro:hover{
+    background-color: #052c53;
+    color: #d40000;
+    border-radius: 6px;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+
+.botao-Cadastro:active {
+    background-color: #052c53;
+    color: #d40000;
+    border-radius: 6px;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 15%;
+    background-color: #052c53;
+    color: #ffffff;
+    padding: 10px 20px;
+}
