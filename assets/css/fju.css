@@ -1,0 +1,124 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #052c53;
+    color: #ffffff;
+    font-family: "Open sans",sans-serif;
+
+}
+
+.FJU-Esporte {
+    max-height: 80px;
+}
+
+.Lista-Topicos {
+    padding: 5px;
+}
+
+.Lista-Topicos ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.Lista-Topicos a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px 15px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.Lista-Topicos a:hover{
+    text-decoration: none;
+    color: #d40000;
+    padding: 10px 15px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.texto-imagem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 4px 4px 4px rgb(0,0,0,0.4);
+}
+
+.texto-imagem .texto  {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.6;
+    color: #052c53;
+    max-width: 50%;
+    gap: 10px;
+    margin-left: 5px;
+    font-family: "Roboto",sans-serif;
+}
+
+.imagem-fju {
+    width: 65%;
+}
+
+.texto-link {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 3%;
+    color: #052c53;
+    font-family: "Roboto",sans-serif;
+}
+
+.redes-lista {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 15px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.rede-social {
+    max-height: 100px;
+}
+
+
+
+.texto-fju {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.fju {
+    text-align: center;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #052c53;
+    max-width: 950px;
+    margin-top: 8%;
+    font-family: "Roboto",sans-serif;
+
+}
+
+hr {
+    width: 70%;
+    margin-top: 5%;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #052c53;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-family: "Open sans",sans-serif;
+}
