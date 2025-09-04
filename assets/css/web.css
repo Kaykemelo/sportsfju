@@ -43,17 +43,27 @@ header {
     font-weight: 600;
 }
 
-.imagens {
+.sessao-imagens {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 55vh;
+    overflow: hidden;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 5%;
+}
+
+.imagens {
+    width: 100%;
+    height: 100%;
+
 }
 
 .Banner-Esporte {
     width: 100%;
-    height: 70%;
-    box-shadow:  4px 4px 4px  rgba(0, 0, 0, 0.2);
-
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
 .conteudos {
