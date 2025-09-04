@@ -1,0 +1,212 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #052c53;
+    color: #ffffff;
+    font-family: "Open Sans",sans-serif;
+}
+hr {
+    width: 70%;
+
+}
+.FJU-Esporte {
+    max-height: 100px;
+}
+
+.Lista-Topicos {
+    padding: 5px;
+}
+
+.Lista-Topicos ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.Lista-Topicos a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px 15px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.Lista-Topicos a:hover{
+    text-decoration: none;
+    color: #d40000;
+    padding: 10px 15px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.banner-campeonato {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55vh;
+    overflow: hidden;
+    box-shadow: 4px 4px 4px rgb(0,0,0,0.4);
+    margin-bottom: 5%;
+}
+
+.imagem-campeonato{
+    width: 100%;
+    height: 100%;
+}
+
+.imagem-banner {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 4px 4px 4px rgb(0,0,0,0.4);
+}
+
+.categorias {
+    margin: 60px auto;
+    text-align: center;
+}
+
+.titulo-categorias {
+    color: #052c53;
+    font-size: 28px;
+    font-family: "Roboto",sans-serif;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.lista-categorias {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.card-categorias {
+    background: #ffffff;
+    border-radius: 6px;
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.2);
+    width: 220px;
+    padding: 15px;
+    transition: transform 0,3s ease;
+}
+
+.card-categorias img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.card-categorias h2 {
+    font-size: 18px;
+    color: #052c53;
+    font-family: "Roboto",sans-serif;
+}
+
+.card-categorias:hover {
+    transform: scale(1.05);
+}
+
+.campeonatos {
+    margin: 60px auto;
+    text-align: center;
+}
+
+.titulo-campeonatos h2 {
+    color: #052c53;
+    font-size: 28px;
+    font-family: "Roboto",sans-serif;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.lista-campeonatos {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.card-campeonatos {
+    background-color: #ffffff;
+    border-radius: 6px;
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.2);
+    width: 280px;
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.card-campeonatos h3 {
+    font-size: 20px;
+    font-family: "Roboto",sans-serif;
+    color: #052c53;
+    margin-bottom: 
+    10px;
+}
+
+.card-campeonatos p {
+    font-size: 16px;
+    font-family: "Roboto",sans-serif;
+    color: #d40000;
+}
+
+.card-campeonatos:hover {
+    transform: scale(1.05);
+}
+
+.regras {
+    margin: 60px auto;
+    max-width: 900px;
+    text-align: center;
+}
+
+.titulo-regras h2 {
+    font-size: 28px;
+    color: #052c53;
+    font-family: "Roboto",sans-serif;
+    margin-bottom: 25px;
+}
+
+.lista-regras ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lista-regras li {
+    background: #ffffff;
+    border-radius: 6px;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+    padding: 12px 0 ;
+    margin: 12px 0;
+    font-size: 16px;
+    font-family: "Open Sans",sans-serif;
+    color: #053c53;
+    text-align: left;
+    transition: transition 0.3s ease;
+}
+
+.lista-regras li:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #052c53;
+    color: #ffffff;
+    padding: 15px 20px;
+    font-family: "Open Sans",sans-serif;
+}
