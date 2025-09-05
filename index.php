@@ -1,9 +1,18 @@
 <?php 
 date_default_timezone_set('America/Sao_Paulo');
 
+// http://localhost/sportsfju/web/?route=home
 
-// http://localhost/sportsfju/?route=categorias
+// http://localhost/sportsfju/admin/?route=categorias
+
+
+$url = $_SERVER['REQUEST_URI'];
+$partes = explode("/", $url);
+echo $partes[1]; // Ex: "produto"
+echo $partes[2]; // Ex: "123"
 $route = $_GET['route'] ?? 'home';
+
+$module = $_GET['module']  ?? 'admin';
 
 switch ($route) {
     case 'home':
@@ -40,7 +49,7 @@ switch ($route) {
     case 'campeonatos':
         require_once 'controller/championship/ChampionshipController.php';
         $controller = new ChampionshipController();
-        $controller->List();
+        $controller->List($module);
         break;
         
     case 'campeonatos-insert':

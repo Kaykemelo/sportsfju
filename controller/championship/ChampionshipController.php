@@ -4,13 +4,13 @@ require_once 'model/category/CategoryModel.php';
 
 class ChampionshipController {
 
-    public function List(){
+    public function List($module = 'admin'){
         
         try {
          $championshipModel = new ChampionshipModel();
 
         $aChampionship = $championshipModel->List();
-        include 'view/championship/list.php';
+        include "view/$module/championship/list.php";
 
         } catch (Exception $e) {
             echo "Erro".$e->getMessage();
