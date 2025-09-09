@@ -40,19 +40,15 @@ include '../sportsfju/template/championshipHeader.php';
                 <h2>Campeonatos</h2>
             </div>
             <div class="lista-campeonatos">
-                <article class="card-campeonatos">
-                    <h3>Campeonato Tal 2025</h3>
-                    <p>Local : Quadra FJU</p>
-                </article>
+                <?php 
+                    foreach ($aChampionship as $championship) {
+                        echo '<article class="card-campeonatos">';
+                        echo '<h3>'.$championship['name'].'<h3>';
+                        echo '<p>Local : Quadra FJU</p>';
+                        echo '</article>';
+                    }
+                ?>
 
-                <article class="card-campeonatos">
-                    <h3>Campeonato Tal 2025</h3>
-                    <p>Local : Quadra FJU</p>
-                </article>
-                <article class="card-campeonatos">
-                    <h3>Campeonato Tal 2025</h3>
-                    <p>Local : Quadra FJU</p>
-                </article>
             </div>
         </section>
         <hr>
