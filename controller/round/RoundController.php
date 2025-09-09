@@ -5,7 +5,7 @@ require_once 'model/round/roundModel.php';
 class RoundController {
 
 
-    public function List(){
+    public function List($module = 'admin'){
         $roundModel = new RoundModel();
 
         try {
@@ -14,11 +14,11 @@ class RoundController {
         } catch (Exception $e) {
             echo "Erro".$e->getMessage();
         }
-        include 'view/round/list.php';
+        include "view/$module/round/list.php";
     }
 
 
-    public function Insert(){
+    public function Insert($module = 'admin'){
         $roundModel = new RoundModel();
 
         
@@ -36,11 +36,11 @@ class RoundController {
                 echo "Erro".$e->getMessage();
             }
         }
-        include 'view/round/create.php';
+        include "view/$module/round/create.php";
         return;
     }
 
-    public function Update($roundId){
+    public function Update($roundId,$module = 'admin'){
         $roundModel = new RoundModel();
 
         if (isset($roundId)) {
@@ -62,11 +62,11 @@ class RoundController {
             }
         }
 
-        include 'view/round/edit.php';
+        include "view/$module/round/edit.php";
         return;
     }
 
-    public function Delete($roundId){
+    public function Delete($roundId,$module = 'admin'){
         $roundModel = new RoundModel();
 
         try {

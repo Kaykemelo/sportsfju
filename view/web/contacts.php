@@ -1,11 +1,11 @@
 <?php
-include '../../template/contactsHeader.php';
+include '../sportsfju/template/contactsHeader.php';
 ?>
     <main>
 
         <section class="banner-contato">
             <div class="banner-bandeira">
-                <img src="../../assets/images/esporte-bandeira.jpeg" alt="Bandeira-Fju" class="Bandeira-Fju">
+                <img src="../../../sportsfju/assets/images/esporte-bandeira.jpeg" alt="Bandeira-Fju" class="Bandeira-Fju">
             </div>
         </section>
 
@@ -23,7 +23,7 @@ include '../../template/contactsHeader.php';
                 <p class="informação">Telefone/WhatsApp para informações:</p>
                 <p class="telefone">
                     <a href="https://wa.me/55196868059" target="_blank">
-                        <img src="../../assets/images/whatsapp.png" alt="WhatsApp" class="imagem-telefone">
+                        <img src="../../../sportsfju/assets/images/whatsapp.png" alt="WhatsApp" class="imagem-telefone">
                     </a>
                 </p>
             </div>
@@ -41,7 +41,7 @@ include '../../template/contactsHeader.php';
 
     </main>
 <?php 
-include '../../template/contactsFooter.php';
+include '../sportsfju/template/contactsFooter.php';
 ?>
 
    

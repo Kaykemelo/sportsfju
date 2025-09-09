@@ -4,7 +4,7 @@ require_once 'model/player/PlayerModel.php';
 
 class PlayerController {
 
-    public function List(){
+    public function List($module = 'admin'){
         $playerModel = new PlayerModel();
 
         try {
@@ -14,11 +14,11 @@ class PlayerController {
         } catch (Exception $e) {
             echo "Erro".$e->getMessage();
         }
-        include 'view/player/list.php';
+        include "view/$module/player/list.php";
         return;
     }   
 
-    public function Insert(){
+    public function Insert($module = 'admin'){
         $playerModel = new PlayerModel();
 
         if (isset($_POST['name']) && isset($_POST['phone']) && isset($_POST['email']) && isset($_POST['status'])) {
@@ -36,11 +36,11 @@ class PlayerController {
                 echo "Erro".$e->getMessage();
             }
         }
-        include 'view/player/create.php';
+        include "view/$module/player/create.php";
         return;
     }
 
-    public function Update($playerId){
+    public function Update($playerId, $module){
         $playerModel = new PlayerModel();
 
         if (isset($playerId)) {
@@ -64,11 +64,11 @@ class PlayerController {
 
         }
 
-        include 'view/player/edit.php';
+        include "view/$module/player/edit.php";
         return;
     }
 
-    public function Delete($playerId){
+    public function Delete($playerId,$module = 'admin'){
         $playerModel = new PlayerModel();
 
         try {

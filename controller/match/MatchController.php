@@ -6,7 +6,7 @@ require_once 'model/matchStatus/MatchStatusModel.php';
 
 class MatchController {
 
-    public function List(){
+    public function List($module ='admin'){
         $matchModel = new MatchModel();
 
         try {
@@ -14,12 +14,12 @@ class MatchController {
         } catch (Exception $e) {
             echo "Erro".$e->getMessage();
         }
-        include 'view/match/list.php';
+        include "view/$module/match/list.php";
         return;
 
     }
 
-    public function Insert(){
+    public function Insert($module = 'admin'){
 
         $TeamModel = new TeamModel();
         $Teams = $TeamModel->getDataTeam();
@@ -43,11 +43,11 @@ class MatchController {
                 echo "Erro".$e->getMessage();
             }
         }
-        include 'view/match/create.php';
+        include "view/$module/match/create.php";
         return;
     }
 
-    public function Update($matchId){
+    public function Update($matchId,$module = 'admin'){
         $matchModel = new MatchModel();
         $TeamModel = new TeamModel();
         $oMatchStatus = new MatchStatusModel();
@@ -74,11 +74,11 @@ class MatchController {
         }
 
 
-        include 'view/match/edit.php';
+        include "view/$module/match/edit.php";
         return;
     }
 
-    public function Delete($matchId){
+    public function Delete($matchId,$module = 'admin'){
         $matchModel = new MatchModel();
 
         try {

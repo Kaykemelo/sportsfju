@@ -1,12 +1,12 @@
 <?php
 
-include '../../template/championshipHeader.php';
+include '../sportsfju/template/championshipHeader.php';
 ?>
 
     <main>
         <section class="banner-campeonato">
             <div class="imagem-campeonato">
-                <img src="../../assets/images/banner-campeonato.jpg" alt="Banner-campeonato" class="imagem-banner">
+                <img src="../../../sportsfju/assets/images/banner-campeonato.jpg" alt="Banner-campeonato" class="imagem-banner">
             </div>
         </section>
 
@@ -16,19 +16,19 @@ include '../../template/championshipHeader.php';
             </div>
             <div class="lista-categorias">
                 <article class="card-categorias">
-                    <img src="../../assets/images/futebol-categoria.jpg" alt="categoria-futebol">
+                    <img src="../../../sportsfju/assets/images/futebol-categoria.jpg" alt="categoria-futebol">
                     <h2>Futebol</h2>
                 </article>
                 <article class="card-categorias">
-                    <img src="../../assets/images/volei-categoria.jpg" alt="categoria-volei">
+                    <img src="../../../sportsfju/assets/images/volei-categoria.jpg" alt="categoria-volei">
                     <h2>Volei</h2>
                 </article>
                 <article class="card-categorias">
-                    <img src="../../assets/images/luta-categoria.jpg" alt="categoria-lutas">
+                    <img src="../../../sportsfju/assets/images/luta-categoria.jpg" alt="categoria-lutas">
                     <h2>Lutas</h2>
                 </article>
                 <article class="card-categorias">
-                    <img src="../../assets/images/basquete-categoria.jpg" alt="categoria-basquete">
+                    <img src="../../../sportsfju/assets/images/basquete-categoria.jpg" alt="categoria-basquete">
                     <h2>Basquete</h2>
                 </article>
             </div>
@@ -72,7 +72,7 @@ include '../../template/championshipHeader.php';
         </section>
     </main>
 <?php
-include '../../template/championshipFooter.php';
+include '../sportsfju/template/championshipFooter.php';
 ?>
   
 </body>

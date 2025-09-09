@@ -4,7 +4,7 @@ require_once 'controller/verification/Verification.php';
 
 class CategoryController{
 
-    public function getList(){
+    public function getList($module = 'admin'){
 
         $categoryModel = new CategoryModel();
 
@@ -12,10 +12,10 @@ class CategoryController{
         
         $oVerification = new VerificationController();
         $oVerification->checkSession();
-        include 'view/category/List.php';
+        include "view/$module/category/List.php";
     }
 
-    public function Insert(){
+    public function Insert($module = 'admin'){
 
         $categoryModel = new CategoryModel();
 
@@ -35,12 +35,12 @@ class CategoryController{
                 echo "Erro".$e->getMessage();
             }
         }
-         include 'view/category/create.php';
+         include "view/$module/category/create.php";
          return;
          
     }
 
-   public function Update($idCategory){
+   public function Update($idCategory,$module = 'admin'){
     
         $categoryModel = new CategoryModel();
           
@@ -66,11 +66,11 @@ class CategoryController{
                 echo "Erro". $e->getMessage();
             }
         }        
-         include 'view/category/edit.php';
+         include "view/$module/category/edit.php";
          return;
    }
 
-    public function Delete($idCategory){
+    public function Delete($idCategory,$module = 'admin'){
 
         $categoryModel = new CategoryModel();
                                          

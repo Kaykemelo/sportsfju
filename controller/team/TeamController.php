@@ -4,12 +4,12 @@ require 'model/team/TeamModel.php';
 
 class TeamController {
 
-    public function List(){
+    public function List($module = 'admin'){
 
         try {
             $TeamModel = new TeamModel();
             $teams = $TeamModel->getDataTeam();
-            include 'view/team/list.php';
+            include "view/$module/team/list.php";
 
         } catch (Exception $e) {
             echo "Erro".$e->getMessage();
@@ -17,7 +17,7 @@ class TeamController {
         return;
     } 
 
-    public function Insert(){
+    public function Insert($module = 'admin'){
 
         $TeamModel = new TeamModel();
 
@@ -36,11 +36,11 @@ class TeamController {
                 echo "Erro".$e->getMessage();
             }
         }
-        include 'view/team/create.php';
+        include "view/$module/team/create.php";
         return;
     }
 
-    public function Update($teamId){
+    public function Update($teamId,$module = 'admin'){
 
         if (isset($teamId)) {
 
@@ -63,13 +63,13 @@ class TeamController {
                 echo "Erro".$e->getMessage();
             }
         }
-        include 'view/team/edit.php';
+        include "view/$module/team/edit.php";
         return;  
 
     }
 
 
-    public function Delete($teamId){
+    public function Delete($teamId,$module = 'admin'){
         $TeamModel = new TeamModel();
 
         try {

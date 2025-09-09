@@ -1,11 +1,11 @@
 <?php 
-include '../../template/fjuHeader.php';
+include '../sportsfju/template/fjuHeader.php';
 ?>
     <main>
         <section class="banner-fju">
             <div class="texto-imagem">
                 <p class="texto">No FJU da Universal, cada jovem encontra a oportunidade de crescer, aprender e se transformar, desenvolvendo fé, disciplina e propósito para vencer na vida.</p>
-                <img src="../../assets/images/fju.png" alt="" class="imagem-fju">
+                <img src="../../../sportsfju/assets/images/fju.png" alt="" class="imagem-fju">
             </div>
         </section>
 
@@ -24,21 +24,21 @@ include '../../template/fjuHeader.php';
             <p class="texto-link">Nos Acompanhe</p>
             <div class="redes-lista">
                 <a href="https://www.instagram.com/fjusaopaulo" target="_blank">
-                    <img src="../../assets/images/instagram.png" alt="Instagram" class="rede-social">
+                    <img src="../../../sportsfju/assets/images/instagram.png" alt="Instagram" class="rede-social">
                 </a>
 
                 <a href="https://www.universal.org/" target="_blank">
-                    <img src="../../assets/images/universal.png" alt="Universal" class="rede-social">
+                    <img src="../../../sportsfju/assets/images/universal.png" alt="Universal" class="rede-social">
                 </a>
 
                 <a href="https://www.youtube.com/c/For%C3%A7aJovemUniversal" target="_blank">
-                    <img src="../../assets/images/youtube.png" alt="Youtube" class="rede-social">
+                    <img src="../../../sportsfju/assets/images/youtube.png" alt="Youtube" class="rede-social">
                 </a>
             </div>
         </section>
     </main>
 <?php 
-include '../../template/fjuFooter.php';
+include '../sportsfju/template/fjuFooter.php';
 ?>
    
 </body>

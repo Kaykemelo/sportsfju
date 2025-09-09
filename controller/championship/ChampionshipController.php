@@ -18,7 +18,7 @@ class ChampionshipController {
        
     }
 
-    public function Insert(){
+    public function Insert($module = 'admin'){
 
         $categoryModel = new CategoryModel();
         $Categorys = $categoryModel->getDataCategory();
@@ -40,11 +40,11 @@ class ChampionshipController {
                 echo "Erro".$e->getMessage();
             }
         }
-        include 'view/championship/create.php';
+        include "view/$module/championship/create.php";
         return;
     }
 
-    public function Update($championshipId){
+    public function Update($championshipId,$module = 'admin'){
         //pega as categorias que existe e um campeonato especifico
 
         if (isset($championshipId)) {
@@ -71,11 +71,11 @@ class ChampionshipController {
             }
         }
 
-        include 'view/championship/edit.php';
+        include "view/$module/championship/edit.php";
         return;
     }
 
-    public function Delete($championshipId){
+    public function Delete($championshipId,$module = 'admin'){
        
         $championshipModel = new ChampionshipModel();
         

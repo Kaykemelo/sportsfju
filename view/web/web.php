@@ -1,11 +1,11 @@
 <?php 
-include '../../template/indexHeader.php';
+include '../sportsfju/template/indexHeader.php';
 ?>
 
     <main>
         <section class="sessao-imagens">
             <div class="imagens">
-                <img src="../../assets/images/banner-esporte.png" class="Banner-Esporte" alt="Imagem-Esportes">
+                <img src="../../../sportsfju/assets/images/banner-esporte.png" class="Banner-Esporte" alt="Imagem-Esportes">
             </div>
         </section>
     
@@ -13,17 +13,17 @@ include '../../template/indexHeader.php';
         <section class="esportes">
             <div class="conteudos">
                  <article class="card-conteudo">
-                    <img src="../../assets/images/volei.png" class="Imagem-Volei"  alt="Imagem-volei">
+                    <img src="../../../sportsfju/assets/images/volei.png" class="Imagem-Volei"  alt="Imagem-volei">
                     <h2 class="titulo-card">Volei</h2>
                  </article>
 
                 <article class="card-conteudo">
-                    <img src="../../assets/images/Bola-futebol.png" class="Imagem-Futebol"  alt="Imagem-Futebol">
+                    <img src="../../../sportsfju/assets/images/Bola-futebol.png" class="Imagem-Futebol"  alt="Imagem-Futebol">
                     <h2 class="titulo-card">Futebol</h2>
                 </article>
 
                 <article class="card-conteudo">
-                    <img src="../../assets/images/luta.png" class="Imagem-Lutas"  alt="Imagem-Lutas">
+                    <img src="../../../sportsfju/assets/images/luta.png" class="Imagem-Lutas"  alt="Imagem-Lutas">
                     <h2 class="titulo-card">Lutas</h2>
                 </article>
 
@@ -47,7 +47,7 @@ include '../../template/indexHeader.php';
         </section>
     </main>
   <?php  
-    include '../../template/indexFooter.php';
+    include '../sportsfju/template/indexFooter.php';
   ?>                  
 </body>
 </html>

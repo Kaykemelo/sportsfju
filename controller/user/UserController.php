@@ -76,7 +76,7 @@ class UserController {
             return;
     }
 
-    public function loginUser(){
+    public function loginUser($module = 'admin'){
         $oUserModel = new UserModel();
 
         if (!empty($_POST['email']) && !empty($_POST['password'])) {
@@ -98,7 +98,7 @@ class UserController {
             }  
 
         }
-        include 'view/user/login.php';
+        include "view/$module/user/login.php";
         return;
     }
 
