@@ -1,6 +1,8 @@
 <?php
+require_once 'controller/verification/Verification.php';
 require 'model/championship/ChampionshipModel.php';
 require_once 'model/category/CategoryModel.php';
+
 
 class ChampionshipController {
 
@@ -8,8 +10,11 @@ class ChampionshipController {
         
         try {
          $championshipModel = new ChampionshipModel();
+         $oVerification = new VerificationController();
 
         $aChampionship = $championshipModel->List();
+        
+        $oVerification->checkSession();
         include "view/$module/championship/list.php";
 
         } catch (Exception $e) {
@@ -20,6 +25,7 @@ class ChampionshipController {
 
     public function Insert($module = 'admin'){
 
+        $oVerification = new VerificationController();
         $categoryModel = new CategoryModel();
         $Categorys = $categoryModel->getDataCategory();
 
@@ -40,12 +46,16 @@ class ChampionshipController {
                 echo "Erro".$e->getMessage();
             }
         }
+        
+        $oVerification->checkSession();
         include "view/$module/championship/create.php";
         return;
     }
 
     public function Update($championshipId,$module = 'admin'){
         //pega as categorias que existe e um campeonato especifico
+
+        $oVerification = new VerificationController();
 
         if (isset($championshipId)) {
             $categoryModel = new CategoryModel();
@@ -71,6 +81,7 @@ class ChampionshipController {
             }
         }
 
+        $oVerification->checkSession();
         include "view/$module/championship/edit.php";
         return;
     }

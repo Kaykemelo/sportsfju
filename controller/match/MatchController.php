@@ -3,17 +3,21 @@
 require_once 'model/match/MatchModel.php';
 require_once 'model/team/TeamModel.php';
 require_once 'model/matchStatus/MatchStatusModel.php';
+require_once 'controller/verification/Verification.php';
 
 class MatchController {
 
     public function List($module ='admin'){
         $matchModel = new MatchModel();
+        $oVerification = new VerificationController();
 
         try {
             $matches = $matchModel->List();
         } catch (Exception $e) {
             echo "Erro".$e->getMessage();
         }
+
+        $oVerification->checkSession();
         include "view/$module/match/list.php";
         return;
 
@@ -21,6 +25,7 @@ class MatchController {
 
     public function Insert($module = 'admin'){
 
+        $oVerification = new VerificationController();
         $TeamModel = new TeamModel();
         $Teams = $TeamModel->getDataTeam();
 
@@ -43,11 +48,15 @@ class MatchController {
                 echo "Erro".$e->getMessage();
             }
         }
+
+        $oVerification->checkSession();
         include "view/$module/match/create.php";
         return;
     }
 
     public function Update($matchId,$module = 'admin'){
+
+        $oVerification = new VerificationController();
         $matchModel = new MatchModel();
         $TeamModel = new TeamModel();
         $oMatchStatus = new MatchStatusModel();
@@ -73,7 +82,7 @@ class MatchController {
             }
         }
 
-
+        $oVerification->checkSession();
         include "view/$module/match/edit.php";
         return;
     }

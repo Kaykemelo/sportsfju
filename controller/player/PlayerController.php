@@ -1,10 +1,14 @@
 <?php 
 
 require_once 'model/player/PlayerModel.php';
+require_once 'controller/verification/Verification.php';
+
 
 class PlayerController {
 
     public function List($module = 'admin'){
+
+        $oVerification = new VerificationController();
         $playerModel = new PlayerModel();
 
         try {
@@ -14,11 +18,15 @@ class PlayerController {
         } catch (Exception $e) {
             echo "Erro".$e->getMessage();
         }
+
+        $oVerification->checkSession();
         include "view/$module/player/list.php";
         return;
     }   
 
     public function Insert($module = 'admin'){
+
+        $oVerification = new VerificationController();
         $playerModel = new PlayerModel();
 
         if (isset($_POST['name']) && isset($_POST['phone']) && isset($_POST['email']) && isset($_POST['status'])) {
@@ -36,11 +44,15 @@ class PlayerController {
                 echo "Erro".$e->getMessage();
             }
         }
+
+        $oVerification->checkSession();
         include "view/$module/player/create.php";
         return;
     }
 
     public function Update($playerId, $module){
+
+        $oVerification = new VerificationController();
         $playerModel = new PlayerModel();
 
         if (isset($playerId)) {
@@ -64,6 +76,7 @@ class PlayerController {
 
         }
 
+        $oVerification->checkSession();
         include "view/$module/player/edit.php";
         return;
     }

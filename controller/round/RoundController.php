@@ -1,11 +1,14 @@
 <?php
 
 require_once 'model/round/roundModel.php';
+require_once 'controller/verification/Verification.php';
 
 class RoundController {
 
 
     public function List($module = 'admin'){
+
+        $oVerification = new VerificationController();
         $roundModel = new RoundModel();
 
         try {
@@ -14,11 +17,15 @@ class RoundController {
         } catch (Exception $e) {
             echo "Erro".$e->getMessage();
         }
+
+        $oVerification->checkSession();
         include "view/$module/round/list.php";
     }
 
 
     public function Insert($module = 'admin'){
+
+        $oVerification = new VerificationController();
         $roundModel = new RoundModel();
 
         
@@ -36,11 +43,15 @@ class RoundController {
                 echo "Erro".$e->getMessage();
             }
         }
+
+        $oVerification->checkSession();
         include "view/$module/round/create.php";
         return;
     }
 
     public function Update($roundId,$module = 'admin'){
+
+        $oVerification = new VerificationController();
         $roundModel = new RoundModel();
 
         if (isset($roundId)) {
@@ -62,6 +73,7 @@ class RoundController {
             }
         }
 
+        $oVerification->checkSession();
         include "view/$module/round/edit.php";
         return;
     }

@@ -7,10 +7,10 @@ class CategoryController{
     public function getList($module = 'admin'){
 
         $categoryModel = new CategoryModel();
+        $oVerification = new VerificationController();
 
         $Categorys = $categoryModel->getDataCategory();
         
-        $oVerification = new VerificationController();
         $oVerification->checkSession();
         include "view/$module/category/List.php";
     }
@@ -18,6 +18,7 @@ class CategoryController{
     public function Insert($module = 'admin'){
 
         $categoryModel = new CategoryModel();
+        $oVerification = new VerificationController();
 
         if (isset($_POST['name'])&& isset($_POST['status'])) {
             $_POST['status'] = ($_POST['status'] === 'ativo') ? 1 : 0;
@@ -35,6 +36,7 @@ class CategoryController{
                 echo "Erro".$e->getMessage();
             }
         }
+         $oVerification->checkSession();
          include "view/$module/category/create.php";
          return;
          
@@ -43,6 +45,7 @@ class CategoryController{
    public function Update($idCategory,$module = 'admin'){
     
         $categoryModel = new CategoryModel();
+        $oVerification = new VerificationController();
           
         if (isset($idCategory)) {
             $CategoryId = $categoryModel->getById($idCategory);
@@ -65,7 +68,9 @@ class CategoryController{
             } catch (Exception $e) {
                 echo "Erro". $e->getMessage();
             }
-        }        
+        }
+
+         $oVerification->checkSession();
          include "view/$module/category/edit.php";
          return;
    }

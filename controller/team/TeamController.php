@@ -1,6 +1,8 @@
 <?php 
 
 require 'model/team/TeamModel.php';
+require_once 'controller/verification/Verification.php';
+
 
 class TeamController {
 
@@ -8,7 +10,11 @@ class TeamController {
 
         try {
             $TeamModel = new TeamModel();
+            $oVerification = new VerificationController();
+
             $teams = $TeamModel->getDataTeam();
+
+            $oVerification->checkSession();
             include "view/$module/team/list.php";
 
         } catch (Exception $e) {
@@ -20,6 +26,7 @@ class TeamController {
     public function Insert($module = 'admin'){
 
         $TeamModel = new TeamModel();
+        $oVerification = new VerificationController();
 
         if (isset($_POST['name']) && isset($_POST['status']) ) {
 
@@ -36,14 +43,17 @@ class TeamController {
                 echo "Erro".$e->getMessage();
             }
         }
+
+        $oVerification->checkSession();
         include "view/$module/team/create.php";
         return;
     }
 
     public function Update($teamId,$module = 'admin'){
 
+        $oVerification = new VerificationController();
+        
         if (isset($teamId)) {
-
             $teamModel = new TeamModel();
             $team = $teamModel->getTeamId($teamId);
            
@@ -63,6 +73,8 @@ class TeamController {
                 echo "Erro".$e->getMessage();
             }
         }
+
+        $oVerification->checkSession();
         include "view/$module/team/edit.php";
         return;  
 
