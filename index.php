@@ -194,19 +194,19 @@ switch ($route) {
     case 'usuario-cadastro':
         require_once 'controller/user/UserController.php';
         $controller = new UserController();
-        $controller->registerUser();
+        $controller->registerUser($module);
         break;    
 
     case 'usuario-update':
         require_once 'controller/user/UserController.php';
         $controller = new UserController();
-        $controller->userUpdate($_GET['id']);
+        $controller->userUpdate($_GET['id'],$module);
         break;
         
     case 'usuario-delete':
         require_once 'controller/user/UserController.php';
         $controller = new UserController();
-        $controller->userDelete($_GET['id']);
+        $controller->userDelete($_GET['id'],$module);
         break;
             
     case 'usuario-login':

@@ -4,7 +4,7 @@ require 'model/user/UserModel.php';
 
 class UserController {
 
-   public function userList(){
+   public function userList($module = 'admin'){
     $oUserModel = new UserModel();
 
         try {
@@ -13,10 +13,10 @@ class UserController {
             echo "Erro".$e->getMessage();
         }
 
-    include 'view/user/list.php';
+    include "view/$module/user/list.php";
    } 
 
-    public function registerUser(){
+    public function registerUser($module = 'admin'){
         $oUserModel = new UserModel();
 
         if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['password']) ) {
@@ -34,11 +34,11 @@ class UserController {
             }
 
         }
-        include 'view/user/register.php';
+        include "view/$module/user/register.php";
         return;
     }
 
-    public function userUpdate($userId){
+    public function userUpdate($userId,$module = 'admin'){
         $oUserModel = new UserModel();
 
         if (isset($userId)) {
@@ -59,11 +59,11 @@ class UserController {
                 echo "Erro".$e->getMessage(); 
             }
         }
-        include 'view/user/edit.php';
+        include "view/$module/user/edit.php";
         return;
     }
 
-    public function userDelete($userId){
+    public function userDelete($userId, $module = 'admin'){
         $oUserModel= new UserModel();
             try {
                 $oUserModel->userDelete($userId);
