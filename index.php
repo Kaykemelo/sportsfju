@@ -21,17 +21,10 @@ switch ($route) {
         break;
 
     case 'categorias':
-        if ($module === 'admin') {
-             require_once 'controller/category/CategoryController.php';
-            $controller = new CategoryController();
-            $controller->getList($module);
-        } else {
-            require_once 'model/category/CategoryModel.php';
-            $categoryModel = new CategoryModel();
-            $Categorys = $categoryModel->getDataCategory();
-
-            include 'view/web/championship.php';
-        }
+         require_once 'controller/category/CategoryController.php';
+         $controller = new CategoryController();
+         $controller->getList($module);
+       
         break;
 
     case 'categorias-insert':
@@ -63,6 +56,10 @@ switch ($route) {
             require_once 'model/championship/ChampionshipModel.php';
             $championshipModel = new ChampionshipModel();
             $aChampionship = $championshipModel->List();
+            
+            require_once 'model/category/CategoryModel.php';
+            $categoryModel = new CategoryModel();
+            $Categorys = $categoryModel->getDataCategory();
 
             include '../sportsfju/view/web/championship.php';
 

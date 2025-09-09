@@ -15,22 +15,14 @@ include '../sportsfju/template/championshipHeader.php';
                 <h2>Categorias</h2>
             </div>
             <div class="lista-categorias">
-                <article class="card-categorias">
-                    <img src="../../../sportsfju/assets/images/futebol-categoria.jpg" alt="categoria-futebol">
-                    <h2>Futebol</h2>
-                </article>
-                <article class="card-categorias">
-                    <img src="../../../sportsfju/assets/images/volei-categoria.jpg" alt="categoria-volei">
-                    <h2>Volei</h2>
-                </article>
-                <article class="card-categorias">
-                    <img src="../../../sportsfju/assets/images/luta-categoria.jpg" alt="categoria-lutas">
-                    <h2>Lutas</h2>
-                </article>
-                <article class="card-categorias">
-                    <img src="../../../sportsfju/assets/images/basquete-categoria.jpg" alt="categoria-basquete">
-                    <h2>Basquete</h2>
-                </article>
+                <?php 
+                    foreach ($Categorys as $category) {
+                        echo '<article class="card-categorias">';
+                        echo "<img src='../../../sportsfju/assets/images/{$category['name']}-categoria.jpg' alt='imagem-categorias'>";
+                        echo '<h2>'.$category['name'].'</h2>';
+                        echo '</article>';
+                    }
+                ?>
             </div>
         </section>
         <hr>
