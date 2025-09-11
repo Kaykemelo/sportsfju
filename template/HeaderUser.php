@@ -9,21 +9,13 @@
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-navy">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html">SportsFJU</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTópicos" aria-controls="navbarTópicos" aria-expanded="false" aria-label="Alternar navegação">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarTópicos">
-        <!--<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="#tecnologia">Tecnologia</a></li>
-          <li class="nav-item"><a class="nav-link" href="#educacao">Educação</a></li>
-          <li class="nav-item"><a class="nav-link" href="#design">Design</a></li>
-          <li class="nav-item"><a class="nav-link" href="#marketing">Marketing</a></li>
-          <li class="nav-item"><a class="nav-link" href="#outros">Outros Conteúdos</a></li>
-        </ul>
-        !-->
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
             <a class="btn btn-outline-light btn-sm" href="?route=usuario-cadastro"> + Cadastre-se</a>

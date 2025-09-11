@@ -3,6 +3,12 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.bg-navy {
+  background-color: #001f3f !important;
+}
+
+
+
 h1, h4 {
   color: #333;
 }
